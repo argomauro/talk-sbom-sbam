@@ -1,0 +1,30 @@
+stages:
+  - scan
+  - upload
+
+# 1. Generazione dello SBOM
+generate_sbom:
+  stage: scan
+  image:
+    name: aquasec/trivy:latest
+    entrypoint: [""]
+  script:
+    # Trivy capisce da solo se è Java, Python o Node e crea il file
+    - trivy fs --format cyclonedx --output bom.json .
+  artifacts:
+    paths:
+      - bom.json
+
+# 2. Invio automatico a Dependency-Track
+upload_to_dtrack:
+  stage: upload
+  image: curlimages/curl:latest
+  script:
+    - |
+      curl -X "POST" "http://tuo-ip-dtrack:8081/api/v1/bom" \
+           -H 'Content-Type: multipart/form-data' \
+           -H "X-Api-Key: $DT_API_KEY" \
+           -F "projectName=$CI_PROJECT_NAME" \
+           -F "projectVersion=$CI_COMMIT_BRANCH" \
+           -F "autoCreate=true" \
+           -F "bom=@bom.json"

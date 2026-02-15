@@ -1,0 +1,58 @@
+services:
+  # --- GITLAB COMMUNITY EDITION ---
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost'
+    ports:
+      - "80:80"
+      - "443:443"
+      - "2222:22"
+    volumes:
+      - './gitlab/config:/etc/gitlab'
+      - './gitlab/logs:/var/log/gitlab'
+      - './gitlab/data:/var/opt/gitlab'
+    shm_size: '256m'
+
+  # --- GITLAB RUNNER ---
+  runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    depends_on:
+      - gitlab
+    volumes:
+      - './runner/config:/etc/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock' # Permette al runner di lanciare container (Docker-in-Docker)
+
+  # --- DEPENDENCY-TRACK API SERVER ---
+  dtrack-api:
+    image: dependencytrack/apiserver
+    container_name: dtrack-api
+    ports:
+      - "8081:8080"
+    environment:
+      - ALPINE_DATABASE_MODE=embedded
+    volumes:
+      - './dtrack:/data'
+
+  # --- DEPENDENCY-TRACK FRONTEND ---
+  dtrack-ui:
+    image: dependencytrack/frontend
+    container_name: dtrack-ui
+    depends_on:
+      - dtrack-api
+    ports:
+      - "8080:8080"
+    environment:
+      - API_BASE_URL=http://localhost:8081 # Cambia localhost con l'IP del PC se accedi da rete esterna
+
+# docker-compose up -d.
+#Accedi a http://localhost:8080
+#(user: admin, pass: admin).
+# password iniziale dell'utente root
+# docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
