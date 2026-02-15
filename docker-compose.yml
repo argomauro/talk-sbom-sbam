@@ -56,3 +56,5 @@ services:
 #(user: admin, pass: admin).
 # password iniziale dell'utente root
 # docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
+# root/FQ9NiPkeGwyPJmuz1qPDzVUrjUDItvsrgN/RD053rGE=
+

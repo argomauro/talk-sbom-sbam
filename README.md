@@ -41,6 +41,9 @@ docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
 1. Accedi a `http://localhost:8080` (User: `admin` / Pass: `admin`).
 2. Vai in **Administration** > **Access Management** > **Teams** > **Automation**.
 3. Copia la **API Key** generata.
+4. **IMPORTANTE**: Assicurati che al team siano assegnati i permessi:
+   - `BOM_UPLOAD`
+   - `PROJECT_CREATION_UPLOAD` (necessario per `autoCreate=true`)
 
 ---
 
@@ -51,19 +54,27 @@ docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
 Per far girare le scansioni, GitLab ha bisogno di un "braccio operativo".
 
 1. Su GitLab (`http://localhost`), vai in **Admin Area** > **CI/CD** > **Runners**.
-2. Crea un nuovo **Project Runner** e copia il **Registration Token**.
-3. Registralo nel container:
+2. Crea un nuovo **Instance Runner**, spunta **"Run untagged jobs"** e copia l'**Authentication Token** (inizia con `glrt-`).
+3. Registralo nel container usando questo comando (sostituisci `TOKEN` e l'IP di GitLab):
 
 ```bash
+# Trova l'IP di GitLab nella rete docker
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' gitlab
+
+# Registra
 docker exec -it gitlab-runner gitlab-runner register \
   --non-interactive \
   --url "http://gitlab/" \
-  --registration-token "IL_TUO_TOKEN" \
+  --token "IL_TUO_TOKEN_GLRT" \
   --executor "docker" \
-  --docker-image "aquasec/trivy:latest" \
-  --docker-network-mode "host"
-
+  --docker-image "alpine:latest" \
+  --docker-volumes "/var/run/docker.sock:/var/run/docker.sock" \
+  --docker-network-mode "talk-sbom-sbam_default" \
+  --docker-extra-hosts "gitlab:IP_GITLAB" \
+  --docker-extra-hosts "host.docker.internal:host-gateway"
 ```
+
+4. **Configurazione finale**: Se il clone fallisce, aggiungi `clone_url = "http://gitlab"` nel file `config.toml` del runner e riavvia il container.
 
 ### B. Variabili CI/CD
 
@@ -132,7 +143,7 @@ scan_and_upload:
     - trivy fs --format cyclonedx --output bom.json .
     # 2. Invia a Dependency-Track
     - |
-      curl -X "POST" "http://localhost:8081/api/v1/bom" \
+      curl -X "POST" "http://host.docker.internal:8081/api/v1/bom" \
            -H 'Content-Type: multipart/form-data' \
            -H "X-Api-Key: $DT_API_KEY" \
            -F "projectName=$CI_PROJECT_NAME" \
@@ -154,9 +165,12 @@ scan_and_upload:
 
 ---
 
-### ⚠️ Note per il Debug
+### ⚠️ Note per il Debug (Lessons Learned)
 
-* Se il Runner non raggiunge GitLab, controlla che nel file `config.toml` del runner l'URL sia corretto (usa l'IP locale se `localhost` fallisce).
-* Se Dependency-Track non riceve il file, verifica che la porta `8081` sia raggiungibile dal Runner.
+*   **SSH GitLab**: Se usi SSH da locale, ricorda che la porta è la `2222`. Esempio: `ssh://git@localhost:2222/root/progetto.git`.
+*   **Networking Job**: I container dei job sono isolati. Assicurati di usare `extra_hosts` nella config del runner per risolvere il nome `gitlab`.
+*   **Accesso all'Host**: Per raggiungere Dependency-Track o altri servizi sul Mac dal pipeline, usa sempre `host.docker.internal`.
+*   **Clone Loop**: Se il runner cerca di clonare da `localhost`, usa `clone_url = "http://gitlab"` nel `config.toml`.
+*   **Untagged Jobs**: Se il job rimane "stuck", verifica che il runner abbia l'opzione "Run untagged jobs" attiva su GitLab.
 
 ---

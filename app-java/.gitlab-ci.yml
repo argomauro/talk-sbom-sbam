@@ -21,7 +21,7 @@ upload_to_dtrack:
   image: curlimages/curl:latest
   script:
     - |
-      curl -X "POST" "http://tuo-ip-dtrack:8081/api/v1/bom" \
+      curl -X "POST" "http://host.docker.internal:8081/api/v1/bom" \
            -H 'Content-Type: multipart/form-data' \
            -H "X-Api-Key: $DT_API_KEY" \
            -F "projectName=$CI_PROJECT_NAME" \
