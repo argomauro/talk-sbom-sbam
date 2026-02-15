@@ -11,14 +11,22 @@ This skill allows the AI Assistant to perform an intelligent analysis of vulnera
 
 1. **Authentication**: 
    - Ensure the `DT_API_KEY` is available. 
-   - The user should provide this key or it can be found in the `app-java/.env` file.
-   - This key must have `VULNERABILITY_ANALYSIS` and `VIEW_PORTFOLIO` permissions.
-2. **Fetch Findings**: Use `scripts/get_findings.py` to retrieve active vulnerabilities for the current project.
-3. **Code Analysis**: Perform a deep scan of the local source code to determine if the vulnerable components are reachable and if the specific vulnerable functions are being used.
-4. **Reasoning**: Document the reasoning for each vulnerability.
-   - If reachable: Mark as `affected`.
-   - If NOT reachable: Mark as `not_affected` with justification `code_not_reachable`.
-5. **Generate VEX**: Create a `vex.json` file in CycloneDX 1.5 format with the findings in the `app-java/` directory.
+   - The user should provide this key or it can be found in the project's `.env` file.
+   - **CRITICAL PERMISSIONS**: This key MUST have `VULNERABILITY_ANALYSIS`, `VIEW_PORTFOLIO`, and `BOM_UPLOAD` permissions.
+2. **Fetch Findings**: Use `scripts/get_findings.py` to retrieve active vulnerabilities.
+3. **Multi-Source Mapping**: 
+   - Dependency-Track often uses **GHSA** (GitHub) as the primary ID for some findings and **CVE** (NVD) for others.
+   - For 100% coverage, always include BOTH IDs in the VEX if they are listed as aliases in the finding.
+4. **Code Analysis**: Perform a deep scan of the local source code to determine reachability.
+5. **Generate VEX (CycloneDX 1.5)**:
+   - **Enums**: Use `exploitable` (not `affected`) or `not_affected`.
+   - **Metadata**: MUST include a `metadata` section with a valid `timestamp` and `tools` array.
+   - **bom-ref**: Use the project's UUID (found in project details or logs) as the `bom-ref` for the `affected` component.
+
+## Best Practices for Portability
+- **Atomic Setup**: Keep the `.agent` folder inside the project root for CI/CD consistency.
+- **Justifications**: Always provide a `detail` field with the AI's reasoning to satisfy security audits.
+- **Universal IDs**: When triage is performed on a component, apply the same logic to all its vulnerability aliases to clear the dashboard entirely.
 
 ## Required Environment Variables
 - `DT_API_KEY`: API key for Dependency-Track.

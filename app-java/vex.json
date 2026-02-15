@@ -1,0 +1,223 @@
+{
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:888d56f7-9766-49bc-94fa-b4480f115d92",
+    "version": 4,
+    "metadata": {
+        "timestamp": "2026-02-16T00:55:00Z",
+        "tools": [
+            {
+                "name": "Antigravity AI Triage",
+                "version": "1.0.0"
+            }
+        ],
+        "component": {
+            "bom-ref": "60054106-f125-4b44-bb00-63c4ea2849fc",
+            "type": "application",
+            "name": "app-java",
+            "version": "main"
+        }
+    },
+    "vulnerabilities": [
+        {
+            "id": "CVE-2021-44228",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4Shell JNDI RCE confirmed. Reachable in 'demo.DemoInfected' via System.in logging."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-jfh8-c2jp-5v3q",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4Shell (GitHub). Reachability confirmed in 'infected.java'."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-44832",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4j JDBC via JNDI RCE. Reachable through vulnerable component version 2.14.1."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-8489-44mv-ggj8",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4j JDBC/JNDI (GitHub). Reachable via log4j-core 2.14.1."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-45046",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Incomplete Log4j fix. Reachable through the same vectors as CVE-2021-44228."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-7rjr-3q55-vv33",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Incomplete Log4j fix (GitHub). Reachable in version 2.14.1."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-45105",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4j Recursion DoS. Reachable via lookup substitution in 2.14.1."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-p6xc-xr62-6r2g",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "exploitable",
+                "detail": "AI AUDIT: Log4j Uncontrolled Recursion (GitHub). Reachable via lookup substitution."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2025-41242",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "not_affected",
+                "justification": "code_not_reachable",
+                "detail": "AI AUDIT: Spring Path Traversal requires Spring MVC resource handling. Project is a console application."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-r936-gwx5-v52f",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "not_affected",
+                "justification": "code_not_reachable",
+                "detail": "AI AUDIT: Spring Path Traversal (GitHub). Not reachable in standalone Java context."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2022-22965",
+            "source": {
+                "name": "NVD"
+            },
+            "analysis": {
+                "state": "not_affected",
+                "justification": "code_not_reachable",
+                "detail": "AI AUDIT: Spring4Shell requires Tomcat WAR deployment. This is a standalone console application."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-36p3-wjmg-h94x",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "not_affected",
+                "justification": "code_not_reachable",
+                "detail": "AI AUDIT: Spring4Shell (GitHub). Not reachable in standalone Java context."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        },
+        {
+            "id": "GHSA-hh26-6xwr-ggv7",
+            "source": {
+                "name": "GITHUB"
+            },
+            "analysis": {
+                "state": "not_affected",
+                "justification": "code_not_reachable",
+                "detail": "AI AUDIT: Spring DoS via file upload (GitHub). No file upload logic found."
+            },
+            "affects": [
+                {
+                    "ref": "60054106-f125-4b44-bb00-63c4ea2849fc"
+                }
+            ]
+        }
+    ]
+}

@@ -17,6 +17,9 @@ services:
       - './gitlab/logs:/var/log/gitlab'
       - './gitlab/data:/var/opt/gitlab'
     shm_size: '256m'
+    networks:
+      default:
+        ipv4_address: 172.20.0.10
 
   # --- GITLAB RUNNER ---
   runner:
@@ -51,10 +54,10 @@ services:
     environment:
       - API_BASE_URL=http://localhost:8081 # Cambia localhost con l'IP del PC se accedi da rete esterna
 
-# docker-compose up -d.
-#Accedi a http://localhost:8080
-#(user: admin, pass: admin).
-# password iniziale dell'utente root
-# docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
-# root/FQ9NiPkeGwyPJmuz1qPDzVUrjUDItvsrgN/RD053rGE=
+networks:
+  default:
+    name: talk-sbom-sbam_default
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
 

@@ -1,0 +1,446 @@
+[
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "959c45a4-7281-4e45-a04a-53ddaa185fcd",
+      "source": "NVD",
+      "vulnId": "CVE-2021-44228",
+      "description": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+      "cvssV2BaseScore": 9.3,
+      "cvssV3BaseScore": 10.0,
+      "severity": "CRITICAL",
+      "severityRank": 0,
+      "epssScore": 0.94358,
+      "epssPercentile": 0.99959,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 400,
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "cweId": 502,
+          "name": "Deserialization of Untrusted Data"
+        },
+        {
+          "cweId": 917,
+          "name": "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-44228",
+          "ghsaId": "GHSA-jfh8-c2jp-5v3q"
+        }
+      ]
+    },
+    "analysis": {
+      "state": "EXPLOITABLE",
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "OSSINDEX_ANALYZER",
+      "attributedOn": 1771193646222
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:959c45a4-7281-4e45-a04a-53ddaa185fcd"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "ae5b14ef-f037-4fcd-a496-8af9d714388d",
+      "source": "NVD",
+      "vulnId": "CVE-2021-44832",
+      "description": "Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack when a configuration uses a JDBC Appender with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.",
+      "cvssV2BaseScore": 8.5,
+      "cvssV3BaseScore": 6.6,
+      "severity": "MEDIUM",
+      "severityRank": 2,
+      "epssScore": 0.53591,
+      "epssPercentile": 0.97916,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 74,
+          "name": "Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-44832",
+          "ghsaId": "GHSA-8489-44mv-ggj8"
+        }
+      ]
+    },
+    "analysis": {
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "OSSINDEX_ANALYZER",
+      "attributedOn": 1771193646229
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:ae5b14ef-f037-4fcd-a496-8af9d714388d"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "905ad48f-a6fe-4a55-b6ae-5dddd1022d56",
+      "source": "NVD",
+      "vulnId": "CVE-2021-45046",
+      "description": "It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allows attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. Log4j 2.16.0 (Java 8) and 2.12.2 (Java 7) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default.",
+      "cvssV2BaseScore": 5.1,
+      "cvssV3BaseScore": 9.0,
+      "severity": "CRITICAL",
+      "severityRank": 0,
+      "epssScore": 0.9434,
+      "epssPercentile": 0.99952,
+      "cweId": 917,
+      "cweName": "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')",
+      "cwes": [
+        {
+          "cweId": 917,
+          "name": "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-45046",
+          "ghsaId": "GHSA-7rjr-3q55-vv33"
+        }
+      ]
+    },
+    "analysis": {
+      "state": "EXPLOITABLE",
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "OSSINDEX_ANALYZER",
+      "attributedOn": 1771193646232
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:905ad48f-a6fe-4a55-b6ae-5dddd1022d56"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "a20e4bd9-b70b-40f4-80df-d6a36ad66d63",
+      "source": "NVD",
+      "vulnId": "CVE-2021-45105",
+      "description": "Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) did not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted. This issue was fixed in Log4j 2.17.0, 2.12.3, and 2.3.1.",
+      "cvssV2BaseScore": 4.3,
+      "cvssV3BaseScore": 5.9,
+      "severity": "MEDIUM",
+      "severityRank": 2,
+      "epssScore": 0.70431,
+      "epssPercentile": 0.98648,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 674,
+          "name": "Uncontrolled Recursion"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-45105",
+          "ghsaId": "GHSA-p6xc-xr62-6r2g"
+        }
+      ]
+    },
+    "analysis": {
+      "state": "EXPLOITABLE",
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "OSSINDEX_ANALYZER",
+      "attributedOn": 1771193646235
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:a20e4bd9-b70b-40f4-80df-d6a36ad66d63"
+  },
+  {
+    "component": {
+      "uuid": "34dc9963-bc07-44fe-93af-2a1d99b59481",
+      "name": "spring-core",
+      "group": "org.springframework",
+      "version": "5.3.15",
+      "purl": "pkg:maven/org.springframework/spring-core@5.3.15",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "7.0.4"
+    },
+    "vulnerability": {
+      "uuid": "71748e41-355e-47e0-b70c-6b667953f86a",
+      "source": "NVD",
+      "vulnId": "CVE-2025-41242",
+      "description": "Spring Framework MVC applications can be vulnerable to a \u201cPath Traversal Vulnerability\u201d when deployed on a non-compliant Servlet container.\n\nAn application can be vulnerable when all the following are true:\n\n  *  the application is deployed as a WAR or with an embedded Servlet container\n  *  the Servlet container  does not reject suspicious sequences https://jakarta.ee/specifications/servlet/6.1/jakarta-servlet-spec-6.1.html#uri-path-canonicalization \n  *  the application  serves static resources https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/static-resources.html#page-title \u00a0with Spring resource handling\n\n\nWe have verified that applications deployed on Apache Tomcat or Eclipse Jetty are not vulnerable, as long as default security features are not disabled in the configuration. Because we cannot check exploits against all Servlet containers and configuration variants, we strongly recommend upgrading your application.",
+      "cvssV3BaseScore": 5.9,
+      "severity": "MEDIUM",
+      "severityRank": 2,
+      "epssScore": 0.00067,
+      "epssPercentile": 0.20679,
+      "cweId": 22,
+      "cweName": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "cwes": [
+        {
+          "cweId": 22,
+          "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2025-41242",
+          "ghsaId": "GHSA-r936-gwx5-v52f"
+        }
+      ]
+    },
+    "analysis": {
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "OSSINDEX_ANALYZER",
+      "attributedOn": 1771193646249
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:34dc9963-bc07-44fe-93af-2a1d99b59481:71748e41-355e-47e0-b70c-6b667953f86a"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "6d824e70-c731-4fd9-aa3b-0395dd6f2e05",
+      "source": "GITHUB",
+      "vulnId": "GHSA-p6xc-xr62-6r2g",
+      "title": "Apache Log4j2 vulnerable to Improper Input Validation and Uncontrolled Recursion",
+      "description": "Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3) did not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted. This issue was fixed in Log4j 2.17.0 and 2.12.3.\n\n\n# Affected packages\nOnly the `org.apache.logging.log4j:log4j-core` package is directly affected by this vulnerability. The `org.apache.logging.log4j:log4j-api` should be kept at the same version as the `org.apache.logging.log4j:log4j-core` package to ensure compatability if in use.",
+      "cvssV3BaseScore": 8.6,
+      "severity": "HIGH",
+      "severityRank": 1,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 674,
+          "name": "Uncontrolled Recursion"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-45105",
+          "ghsaId": "GHSA-p6xc-xr62-6r2g"
+        }
+      ]
+    },
+    "analysis": {
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "INTERNAL_ANALYZER",
+      "attributedOn": 1771193646275
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:6d824e70-c731-4fd9-aa3b-0395dd6f2e05"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "8fef51ed-aae8-4dbc-98db-5b4762383389",
+      "source": "GITHUB",
+      "vulnId": "GHSA-8489-44mv-ggj8",
+      "title": "Improper Input Validation and Injection in Apache Log4j2",
+      "description": "Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to an attack where an attacker with permission to modify the logging configuration file can construct a malicious configuration using a JDBC Appender with a data source referencing a JNDI URI which can execute remote code. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.\n\n\n# Affected packages\nOnly the `org.apache.logging.log4j:log4j-core` package is directly affected by this vulnerability. The `org.apache.logging.log4j:log4j-api` should be kept at the same version as the `org.apache.logging.log4j:log4j-core` package to ensure compatability if in use.\n\nThis issue does not impact default configurations of Log4j2 and requires an attacker to have control over the Log4j2 configuration, which reduces the likelihood of being exploited.",
+      "cvssV3BaseScore": 6.6,
+      "severity": "MEDIUM",
+      "severityRank": 2,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 74,
+          "name": "Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-44832",
+          "ghsaId": "GHSA-8489-44mv-ggj8"
+        }
+      ]
+    },
+    "analysis": {
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "INTERNAL_ANALYZER",
+      "attributedOn": 1771193646278
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:8fef51ed-aae8-4dbc-98db-5b4762383389"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "4277bdb3-6f14-4fc4-af29-f48cb3fc8caa",
+      "source": "GITHUB",
+      "vulnId": "GHSA-7rjr-3q55-vv33",
+      "title": "Incomplete fix for Apache Log4j vulnerability",
+      "description": "# Impact\n\nThe fix to address [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allow attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in a remote code execution (RCE) attack. \n\n## Affected packages\nOnly the `org.apache.logging.log4j:log4j-core` package is directly affected by this vulnerability. The `org.apache.logging.log4j:log4j-api` should be kept at the same version as the `org.apache.logging.log4j:log4j-core` package to ensure compatability if in use.\n\n# Mitigation\n\nLog4j 2.16.0 fixes this issue by removing support for message lookup patterns and disabling JNDI functionality by default. This issue can be mitigated in prior releases (< 2.16.0) by removing the JndiLookup class from the classpath (example: zip -q -d log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class).\n\nLog4j 2.15.0 restricts JNDI LDAP lookups to localhost by default. Note that previous mitigations involving configuration such as to set the system property `log4j2.formatMsgNoLookups` to `true` do NOT mitigate this specific vulnerability.",
+      "cvssV3BaseScore": 9.0,
+      "severity": "CRITICAL",
+      "severityRank": 0,
+      "cweId": 502,
+      "cweName": "Deserialization of Untrusted Data",
+      "cwes": [
+        {
+          "cweId": 502,
+          "name": "Deserialization of Untrusted Data"
+        },
+        {
+          "cweId": 917,
+          "name": "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-45046",
+          "ghsaId": "GHSA-7rjr-3q55-vv33"
+        }
+      ]
+    },
+    "analysis": {
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "INTERNAL_ANALYZER",
+      "attributedOn": 1771193646286
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:4277bdb3-6f14-4fc4-af29-f48cb3fc8caa"
+  },
+  {
+    "component": {
+      "uuid": "3dd0daa9-0300-4671-b557-99e8136aa137",
+      "name": "log4j-core",
+      "group": "org.apache.logging.log4j",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "project": "60054106-f125-4b44-bb00-63c4ea2849fc",
+      "latestVersion": "3.0.0-beta3"
+    },
+    "vulnerability": {
+      "uuid": "fb979be9-3828-4f0d-b745-56f03105657c",
+      "source": "GITHUB",
+      "vulnId": "GHSA-jfh8-c2jp-5v3q",
+      "title": "Remote code injection in Log4j",
+      "description": "# Summary\n\nLog4j versions prior to 2.16.0 are subject to a remote code execution vulnerability via the ldap JNDI parser.\nAs per [Apache's Log4j security guide](https://logging.apache.org/log4j/2.x/security.html): Apache Log4j2 <=2.14.1 JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.16.0, this behavior has been disabled by default.\n\nLog4j version 2.15.0 contained an earlier fix for the vulnerability, but that patch did not disable attacker-controlled JNDI lookups in all situations. For more information, see the `Updated advice for version 2.16.0` section of this advisory.\n\n# Impact\n\nLogging untrusted or user controlled data with a vulnerable version of Log4J may result in Remote Code Execution (RCE) against your application. This includes untrusted data included in logged errors such as exception traces, authentication failures, and other unexpected vectors of user controlled input. \n\n# Affected versions\n\nAny Log4J version prior to v2.15.0 is affected to this specific issue.\n\nThe v1 branch of Log4J which is considered End Of Life (EOL) is vulnerable to other RCE vectors so the recommendation is to still update to 2.16.0 where possible.\n\n## Security releases\nAdditional backports of this fix have been made available in versions 2.3.1, 2.12.2, and 2.12.3\n\n## Affected packages\nOnly the `org.apache.logging.log4j:log4j-core` package is directly affected by this vulnerability. The `org.apache.logging.log4j:log4j-api` should be kept at the same version as the `org.apache.logging.log4j:log4j-core` package to ensure compatability if in use.\n\n# Remediation Advice\n\n## Updated advice for version 2.16.0\n\nThe Apache Logging Services team provided updated mitigation advice upon the release of version 2.16.0, which [disables JNDI by default and completely removes support for message lookups](https://logging.apache.org/log4j/2.x/changes-report.html#a2.16.0).\nEven in version 2.15.0, lookups used in layouts to provide specific pieces of context information will still recursively resolve, possibly triggering JNDI lookups. This problem is being tracked as [CVE-2021-45046](https://nvd.nist.gov/vuln/detail/CVE-2021-45046). More information is available on the [GitHub Security Advisory for CVE-2021-45046](https://github.com/advisories/GHSA-7rjr-3q55-vv33).\n\nUsers who want to avoid attacker-controlled JNDI lookups but cannot upgrade to 2.16.0 must [ensure that no such lookups resolve to attacker-provided data and ensure that the the JndiLookup class is not loaded](https://issues.apache.org/jira/browse/LOG4J2-3221).\n\nPlease note that Log4J v1 is End Of Life (EOL) and will not receive patches for this issue. Log4J v1 is also vulnerable to other RCE vectors and we recommend you migrate to Log4J 2.16.0 where possible.",
+      "cvssV3BaseScore": 10.0,
+      "severity": "CRITICAL",
+      "severityRank": 0,
+      "cweId": 20,
+      "cweName": "Improper Input Validation",
+      "cwes": [
+        {
+          "cweId": 20,
+          "name": "Improper Input Validation"
+        },
+        {
+          "cweId": 400,
+          "name": "Uncontrolled Resource Consumption"
+        },
+        {
+          "cweId": 502,
+          "name": "Deserialization of Untrusted Data"
+        },
+        {
+          "cweId": 917,
+          "name": "Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        }
+      ],
+      "aliases": [
+        {
+          "cveId": "CVE-2021-44228",
+          "ghsaId": "GHSA-jfh8-c2jp-5v3q"
+        }
+      ]
+    },
+    "analysis": {
+      "state": "EXPLOITABLE",
+      "isSuppressed": false
+    },
+    "attribution": {
+      "analyzerIdentity": "INTERNAL_ANALYZER",
+      "attributedOn": 1771193646290
+    },
+    "matrix": "60054106-f125-4b44-bb00-63c4ea2849fc:3dd0daa9-0300-4671-b557-99e8136aa137:fb979be9-3828-4f0d-b745-56f03105657c"
+  }
+]
