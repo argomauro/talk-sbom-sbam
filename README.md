@@ -45,6 +45,20 @@ docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
    - `BOM_UPLOAD`
    - `PROJECT_CREATION_UPLOAD` (necessario per `autoCreate=true`)
 
+### Passo 4: Configurazione Sorgenti Vulnerabilità (API Keys)
+
+Per un'analisi efficace e senza blocchi, Dependency-Track ha bisogno di connettersi ai database esterni. È fortemente consigliato configurare le API Key:
+
+1. **NVD (NIST)**:
+   - Richiedi una chiave qui: [NVD API Key Request](https://nvd.nist.gov/developers/request-an-api-key).
+   - Inseriscila in **Administration** > **Analyzers** > **Vulnerability Analyzers** > **NVD**.
+2. **Sonatype OSS Index**:
+   - Registrati su [OSS Index](https://ossindex.sonatype.org/).
+   - Inserisci email e token in **Administration** > **Analyzers** > **Vulnerability Analyzers** > **OSS Index**.
+3. **GitHub Advisories**:
+   - Crea un personal token su GitHub (permessi base).
+   - Abilita il mirror in **Administration** > **Vulnerability Sources** > **GitHub Advisories**.
+
 ---
 
 ## 🧬 3. Configurazione Progetti su GitLab

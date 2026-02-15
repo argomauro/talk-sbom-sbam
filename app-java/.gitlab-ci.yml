@@ -1,6 +1,7 @@
 stages:
   - scan
   - upload
+  - triage
 
 # 1. Generazione dello SBOM
 generate_sbom:
@@ -9,7 +10,6 @@ generate_sbom:
     name: aquasec/trivy:latest
     entrypoint: [""]
   script:
-    # Trivy capisce da solo se è Java, Python o Node e crea il file
     - trivy fs --format cyclonedx --output bom.json .
   artifacts:
     paths:
@@ -28,3 +28,21 @@ upload_to_dtrack:
            -F "projectVersion=$CI_COMMIT_BRANCH" \
            -F "autoCreate=true" \
            -F "bom=@bom.json"
+
+# 3. Upload AI-Generated VEX to Dependency-Track
+upload_vex:
+  stage: triage
+  image: curlimages/curl:latest
+  script:
+    - |
+      if [ -f vex.json ]; then
+        echo "Uploading VEX file..."
+        curl -X "POST" "http://host.docker.internal:8081/api/v1/vex" \
+             -H 'Content-Type: multipart/form-data' \
+             -H "X-Api-Key: $DT_API_KEY" \
+             -F "projectName=$CI_PROJECT_NAME" \
+             -F "projectVersion=$CI_COMMIT_BRANCH" \
+             -F "vex=@vex.json"
+      else
+        echo "No VEX file found. Please run the Antigravity Triage skill first."
+      fi
