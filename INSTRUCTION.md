@@ -24,7 +24,11 @@ docker exec -it gitlab-runner gitlab-runner register \
 Dall'IDE Antigravity, esegui l'arricchimento intelligente con l'AI-Native Analyst:
 
 ```bash
+# Modalità Full (Default)
 python3 .agent/skills/vex-triage/scripts/generate_vex.py
+
+# Modalità Critical (Veloce)
+python3 .agent/skills/vex-triage/scripts/generate_vex.py --mode critical
 ```
 
 ### 4. Push & Sync
