@@ -14,8 +14,10 @@ This skill performs a local, AI-driven analysis of vulnerabilities identified in
 2. **Local Analysis & Enrichment**:
    - Execute `python3 .agent/skills/vex-triage/scripts/generate_vex.py`.
    - The skill analyzes the local source code and "enriches" the `vex.json` with reachability research. 
-   - All 79 vulnerabilities are analyzed; non-reachable ones are marked as `not_affected` with detailed AI justifications.
-3. **Commit & Push**:
+3. **Developer Review**:
+   - Open `.agent/skills/vex-triage/dashboard/triage-dashboard.html` in your browser.
+   - Review findings and add developer comments to prioritize real risks.
+4. **Commit & Push**:
    - Commit the updated `vex.json`. 
    - The consolidated GitLab CI pipeline will automatically handle the upload to Dependency-Track.
 
