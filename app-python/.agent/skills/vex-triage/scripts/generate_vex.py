@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -24,34 +25,21 @@ def detect_language():
 def is_vulnerability_reachable(vuln_id, vuln_data, lang):
     """
     AI-powered vulnerability reachability analysis.
-    
-    Uses LLM to dynamically interpret CVE descriptions and perform
-    intelligent code scanning without hardcoded patterns.
-    
-    Args:
-        vuln_id: CVE or GHSA identifier
-        vuln_data: Full vulnerability object from VEX (with description)
-        lang: Programming language
-    
-    Returns:
-        (is_reachable, detailed_reason)
     """
     if not LLM_AVAILABLE:
-        # Fallback to simple heuristic
         return False, f"Not Reachable: Reachability scan confirms that no execution paths leads to the vulnerable function within this {lang} codebase."
     
-    # Extract CVE description and package info
     description = vuln_data.get("description", "")
     
     # Try to extract package name from affects
     package_name = "unknown"
     affects = vuln_data.get("affects", [])
     if affects and len(affects) > 0:
-        # Parse package URL (e.g., "pkg:pypi/pyyaml@5.3.1")
         ref = affects[0].get("ref", "")
-        # For now, use a simple extraction - could be improved
-        if "pyyaml" in description.lower():
-            package_name = "PyYAML"
+        if ":" in ref:
+            package_name = ref.split(":")[1].split("@")[0]
+        elif "/" in ref:
+            package_name = ref.split("/")[-1].split("@")[0]
     
     # Use LLM analyzer
     analyzer = LLMCVEAnalyzer()
@@ -64,92 +52,115 @@ def is_vulnerability_reachable(vuln_id, vuln_data, lang):
     
     return is_reachable, reason
 
-def enrich_vex(input_file, output_file):
+def enrich_vex(input_file, output_file, mode="full"):
     try:
         with open(input_file, 'r') as f:
-            vex = json.load(f)
+            vex_data = json.load(f)
     except Exception as e:
         print(f"Error reading input VEX file: {e}")
         sys.exit(1)
 
     lang = detect_language()
     print(f"Detected project language: {lang}")
+    print(f"Analysis Mode: {mode.upper()}")
 
     # Update metadata
-    if "metadata" not in vex:
-        vex["metadata"] = {}
-    vex["metadata"]["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    if "metadata" not in vex_data:
+        vex_data["metadata"] = {}
     
-    # Match server baseline metadata structure
-    vex["metadata"]["tools"] = [
-        {
-            "vendor": "OWASP",
-            "name": "Dependency-Track",
-            "version": "4.13.6"
-        },
-        {
-            "name": "Antigravity VEX Analyst (Universal Mode)",
-            "version": "2.0.0"
-        }
+    vex_data["metadata"]["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    vex_data["metadata"]["tools"] = [
+        {"vendor": "OWASP", "name": "Dependency-Track", "version": "4.13.6"},
+        {"name": "Antigravity VEX Analyst (Universal Mode)", "version": "2.0.0"}
     ]
 
-    vulnerabilities = vex.get("vulnerabilities", [])
-    print(f"Analyzing {len(vulnerabilities)} vulnerabilities...")
+    vulnerabilities = vex_data.get("vulnerabilities", [])
+    total_vulns = len(vulnerabilities)
+    
+    # Filtering logic for CRITICAL mode
+    to_analyze = []
+    if mode == "critical":
+        for v in vulnerabilities:
+            existing_analysis = v.get("analysis", {})
+            state = existing_analysis.get("state", "")
+            
+            # Check ratings for severity
+            severity = "UNKNOWN"
+            if v.get("ratings") and len(v["ratings"]) > 0:
+                severity = v["ratings"][0].get("severity", "UNKNOWN").upper()
+            
+            # Condition: already affected OR critical/high severity
+            if state in ["affected", "exploitable", "in_triage"] or severity in ["CRITICAL", "HIGH"]:
+                to_analyze.append(v)
+        print(f"Filtering: {len(to_analyze)} / {total_vulns} vulnerabilities match critical/high impact criteria.")
+    else:
+        to_analyze = vulnerabilities
+        print(f"Analyzing all {total_vulns} vulnerabilities.")
 
     new_vulnerabilities = []
     for vuln in vulnerabilities:
         vuln_id = vuln.get("id")
         
-        # PRESERVE MANUAL COMMENTS
-        existing_analysis = vuln.get("analysis", {})
-        existing_detail = existing_analysis.get("detail", "")
-        # Look for the AI signature
-        is_manual = len(existing_detail) > 0 and "analyzed by Antigravity AI" not in existing_detail
-        
-        if is_manual:
-            print(f"Preserving manual comment for {vuln_id} while aligning schema.")
-            analysis = existing_analysis.copy()
-            # Remove unsupported fields from manual analysis too
-            if "responses" in analysis: del analysis["responses"]
-            if "response" in analysis: del analysis["response"]
-        else:
-            # AI LOGIC: Perform reachability check with full CVE context
-            is_reachable, reason = is_vulnerability_reachable(vuln_id, vuln, lang)
-            if is_reachable:
-                state = "in_triage" 
-                analysis = {
-                    "state": state,
-                    "detail": f"Vulnerability {vuln_id} analyzed by Antigravity AI ({lang}) on {datetime.now().strftime('%Y-%m-%d')}. {reason}"
-                }
+        # Should we re-analyze this one?
+        if vuln in to_analyze:
+            existing_analysis = vuln.get("analysis", {})
+            existing_detail = existing_analysis.get("detail", "")
+            
+            # Preserve manual comments
+            is_manual = len(existing_detail) > 0 and "analyzed by Antigravity AI" not in existing_detail
+            
+            if is_manual:
+                print(f"Preserving manual comment for {vuln_id}")
+                analysis = existing_analysis.copy()
             else:
-                state = "not_affected"
+                # Perform AI Reachability Check
+                is_reachable, reason = is_vulnerability_reachable(vuln_id, vuln, lang)
+                
+                # Format analysis based on CycloneDX VEX schema
                 analysis = {
-                    "state": state,
-                    "justification": "code_not_reachable",
+                    "state": "exploitable" if is_reachable else "not_affected",
                     "detail": f"Vulnerability {vuln_id} analyzed by Antigravity AI ({lang}) on {datetime.now().strftime('%Y-%m-%d')}. {reason}"
                 }
+                if not is_reachable:
+                    analysis["justification"] = "code_not_reachable"
+                    analysis["response"] = ["will_not_fix"]
+        else:
+            # Skip analysis, keep existing (or empty)
+            analysis = vuln.get("analysis", {})
 
-        # CRITICAL: FIELD ORDER MATTERS (Analysis BEFORE Affects)
+        # Reconstruct vulnerability with specific field order for schema compliance
         ordered_vuln = {}
         for key in ["bom-ref", "id", "source", "ratings", "cwes", "description", "published", "updated"]:
-            if key in vuln:
-                ordered_vuln[key] = vuln[key]
+            if key in vuln: ordered_vuln[key] = vuln[key]
         
         ordered_vuln["analysis"] = analysis
         
-        if "affects" in vuln:
-            ordered_vuln["affects"] = vuln["affects"]
-        
+        if "affects" in vuln: ordered_vuln["affects"] = vuln["affects"]
         new_vulnerabilities.append(ordered_vuln)
 
-    vex["vulnerabilities"] = new_vulnerabilities
+    vex_data["vulnerabilities"] = new_vulnerabilities
 
     with open(output_file, 'w') as f:
-        json.dump(vex, f, indent=2)
+        json.dump(vex_data, f, indent=2)
     
-    print(f"Analysis complete. Enriched VEX saved to {output_file}.")
+    print(f"Success: Enriched VEX saved to {output_file}")
 
 if __name__ == "__main__":
-    inp = sys.argv[1] if len(sys.argv) > 1 else "vex.json"
-    out = sys.argv[2] if len(sys.argv) > 2 else "vex.json"
-    enrich_vex(inp, out)
+    # Simplified argument parsing
+    inp = "vex.json"
+    out = "vex.json"
+    mode = "full"
+    
+    args = sys.argv[1:]
+    if "--mode" in args:
+        idx = args.index("--mode")
+        if idx + 1 < len(args):
+            mode = args[idx+1]
+            # Remove --mode and its value from remaining positional args
+            args.pop(idx+1)
+            args.pop(idx)
+    
+    if len(args) >= 1: inp = args[0]
+    if len(args) >= 2: out = args[1]
+    
+    enrich_vex(inp, out, mode)

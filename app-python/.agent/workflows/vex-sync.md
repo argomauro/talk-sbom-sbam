@@ -16,9 +16,18 @@ This workflow ensures that vulnerability triage is consistent, versioned, and sy
 
 2. **Run AI Reachability Analysis**
    Use the `vex-triage` skill to automatically enrich the local `vex.json`.
+   
+   > [!NOTE]
+   > Scegli la modalità di analisi:
+   > - **Full**: Scansione completa di tutte le vulnerabilità.
+   > - **Critical**: Focus solo su ciò che è CRITICAL/HIGH o già marcato come Affected.
+
    ```bash
-   # From the project root
-   python3 .agent/skills/vex-triage/scripts/generate_vex.py
+   # Opzione 1: Analisi COMPLETA
+   python3 .agent/skills/vex-triage/scripts/generate_vex.py vex.json vex.json --mode full
+
+   # Opzione 2: Analisi CRITICA (Più veloce)
+   python3 .agent/skills/vex-triage/scripts/generate_vex.py vex.json vex.json --mode critical
    ```
 
 3. **Review & Comment (Developer Triage)**

@@ -13,6 +13,9 @@ This skill performs a local, **AI-native analysis** of vulnerabilities identifie
    - Use `git pull` to ensure your local `vex.json` is synchronized with the latest state from the CI/CD pipeline.
 2. **AI-Native Analysis & Enrichment**:
    - Execute `python3 .agent/skills/vex-triage/scripts/generate_vex.py`.
+   - **Modes**:
+     - `--mode full` (Default): Analyzes all vulnerabilities.
+     - `--mode critical`: Focuses only on critical/high impact items for faster triage.
    - The **AI-Native Analyst** reads the CVE description, identifies dangerous functions, and scans the codebase (tracking scope and calls) to confirm reachability.
 3. **Developer Review**:
    - Open `.agent/skills/vex-triage/dashboard/triage-dashboard.html` in your browser.
