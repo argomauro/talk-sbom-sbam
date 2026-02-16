@@ -10,20 +10,20 @@ Mentre gli scanner tradizionali si fermano all'elenco delle librerie (SBOM), Ant
 
 La Skill agisce come un connettore intelligente tra il codice locale e l'intelligence di Dependency-Track.
 
-#### 1. Flusso Operativo della Skill:
+#### 1. Flusso Operativo della Skill (Git-Driven):
 
-1. **Lookup:** All'apertura di un progetto o di una PR, la Skill interroga le API di Dependency-Track tramite l'ID del progetto.
-2. **Mapping:** Recupera l'elenco delle CVE attive e, tramite IA, analizza la documentazione della vulnerabilità per identificare i metodi o le classi compromesse.
-3. **Code Trace:** L'IA di Antigravity esegue una scansione del codice locale per verificare se esistono percorsi di esecuzione che portano alla funzione vulnerabile.
-4. **Decisione Automatica:**
-* **Vulnerable:** Se la funzione è usata, Antigravity evidenzia la riga di codice e suggerisce la patch.
-* **Not Affected:** Se la funzione non è raggiungibile, Antigravity propone la generazione di un file **VEX (Vulnerability Exploitability eXchange)**.
+1. **Sync Baseline:** Lo sviluppatore esegue `git pull`. Il file `vex.json` viene scaricato localmente (precedentemente prelevato da GitLab CI da Dependency-Track).
+2. **AI Analysis:** La Skill analizza il file `vex.json` locale e, tramite IA, esegue il mapping delle CVE con le classi/metodi vulnerabili.
+3. **Offline Reachability Scan:** L'IA di Antigravity esegue una scansione del codice locale per verificare se esistono percorsi di esecuzione reali verso le funzioni vulnerabili. Questo passaggio è **completamente offline** e non richiede API Key.
+4. **Enrichment:**
+   * **Vulnerable:** Se la funzione è usata, Antigravity suggerisce la patch.
+   * **Not Affected:** Se la funzione non è raggiungibile, Antigravity arricchisce il file `vex.json` con lo stato `not_affected` e una giustificazione tecnica dettagliata.
+5. **CI/CD Push:** Lo sviluppatore pusha il file `vex.json` arricchito. La pipeline consolidata rileva la modifica e aggiorna automaticamente Dependency-Track.
 
+#### 2. Esempio di Utilizzo della Skill:
 
+> *"Esegui l'arricchimento del VEX locale analizzando la reachability per tutte le CVE elencate in vex.json. Per ogni vulnerabilità non raggiungibile, aggiorna lo stato a 'not_affected' spiegando il perché basandoti sull'analisi del codice."*
 
-#### 2. Esempio di Prompt per la Skill VEX:
-
-> *"Analizza la CVE-2021-44228 (Log4Shell) che impatta la libreria log4j-core. La vulnerabilità risiede nel lookup dei messaggi JNDI. Controlla nel mio codice se utilizziamo configurazioni di logging che permettono il lookup di stringhe utente non sanificate. Se il rischio è assente, genera un documento VEX in formato CycloneDX dichiarando lo stato 'not_affected' con giustificazione 'code_not_reachable'."*
 
 ### 📋 Vantaggi del Workflow con Antigravity
 

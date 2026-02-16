@@ -139,43 +139,35 @@ PyYAML==3.12
 
 ---
 
-## 🤖 5. Il Motore di Automazione
+## 🤖 5. Il Motore di Automazione (CI/CD Consolidato)
 
-In ogni repository, crea il file `.gitlab-ci.yml`:
+In ogni repository, il file `.gitlab-ci.yml` gestisce l'intero ciclo di vita della sicurezza in due stage atomici:
 
-```yaml
-stages:
-  - scan
+1. **Scan Stage**: Genera lo SBOM (CycloneDX) usando Trivy.
+2. **Sync Stage**: 
+   - Carica lo SBOM su Dependency-Track.
+   - Carica il VEX arricchito (se modificato dallo sviluppatore/IA).
+   - Scarica e sincronizza la baseline VEX dal server se non ci sono modifiche locali.
 
-scan_and_upload:
-  stage: scan
-  image:
-    name: aquasec/trivy:latest
-    entrypoint: [""]
-  script:
-    # 1. Genera SBOM
-    - trivy fs --format cyclonedx --output bom.json .
-    # 2. Invia a Dependency-Track
-    - |
-      curl -X "POST" "http://host.docker.internal:8081/api/v1/bom" \
-           -H 'Content-Type: multipart/form-data' \
-           -H "X-Api-Key: $DT_API_KEY" \
-           -F "projectName=$CI_PROJECT_NAME" \
-           -F "projectVersion=$CI_COMMIT_BRANCH" \
-           -F "autoCreate=true" \
-           -F "bom=@bom.json"
+Questo garantisce che il repository git sia sempre la "Single Source of Truth" per lo stato di sicurezza del progetto.
 
-```
+## 🧠 6. AI-Driven VEX Triage (Antigravity)
+
+L'integrazione con **Antigravity** permette di ridurre drasticamente il numero di vulnerabilità da gestire manualmente:
+
+1. **Analisi contestuale**: L'IA scansiona il codice sorgente per verificare se le funzioni vulnerabili sono effettivamente richiamate (Reachability Analysis).
+2. **Generazione VEX "as-Code"**: Per le vulnerabilità non raggiungibili, l'IA genera automaticamente le giustificazioni tecniche nel file `vex.json`.
+3. **Zero Trust Integration**: La sincronizzazione avviene tramite commit, garantendo tracciabilità totale e sicurezza dei segreti (le API Key sono gestite solo dai runner).
 
 ---
 
-## 🎤 6. Demo Script (Cosa mostrare)
+## 🎤 7. Demo Script (Cosa mostrare)
 
-1. **Push del Codice:** Fai un commit su GitLab con una libreria vecchia.
-2. **Pipeline in corso:** Mostra il log del Runner che usa `Trivy`.
-3. **Analisi:** Apri Dependency-Track. Mostra il progetto appena creato.
-4. **Esplosione CVE:** Mostra la tab "Vulnerabilities" e spiega che il sistema ha trovato le falle incrociando i dati con il database NVD.
-5. **Ricerca Globale:** Cerca "Log4j" nella barra globale di Dependency-Track per far vedere come trovi istantaneamente tutti i progetti aziendali a rischio.
+1. **Push del Codice:** Fai un commit con una libreria vecchia.
+2. **Pipeline Consolidata:** Mostra lo stage `sync` che carica SBOM e gestisce il VEX.
+3. **Triage con Antigravity:** Apri l'IDE, lancia la skill "VEX Triage" e mostra l'arricchimento automatico del file `vex.json` basato sull'analisi del codice.
+4. **Final Sync:** Pusha il VEX arricchito e mostra su Dependency-Track come le vulnerabilità passano a "Not Affected".
+
 
 ---
 
