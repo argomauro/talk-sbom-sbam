@@ -6,13 +6,14 @@ Oltre all'automazione lato server, è possibile integrare **Antigravity** (IDE I
 
 Mentre gli scanner tradizionali si fermano all'elenco delle librerie (SBOM), Antigravity utilizza il suo **AI-Native Analyst** per determinare l'effettiva "raggiungibilità" (reachability) di una vulnerabilità in modo intelligente:
 
-*   **Dynamic Interpretation**: L'IA non usa pattern fissi, ma legge la descrizione della CVE e capisce autonomamente cosa cercare nel codice.
-*   **Semantic Scanning**: L'IA analizza il contesto (indentazione, scope, chiamate di funzione) per capire se il codice pericoloso è effettivamente eseguibile.
+*   **Semantic Context Analysis**: L'algoritmo non si limita a trovare pattern, ma analizza l'indentazione, lo scope delle funzioni e le effettive catene di chiamata.
+*   **Selective Triage Mode**: Possibilità di prioritizzare l'analisi sulle criticità (`--mode critical`) per una risposta agli incidenti ancora più rapida.
+*   **VEX-as-Code Compliance**: Output generato seguendo rigorosamente lo schema CycloneDX, pronto per il consumo di enterprise security tools.
 
-### 🛠️ Configurazione della Skill Antigravity
-
-La Skill agisce come un connettore intelligente tra il codice locale e l'intelligence di Dependency-Track.
-
+```bash
+# Esempio di analisi selettiva rapida
+python3 .agent/skills/vex-triage/scripts/generate_vex.py --mode critical
+```
 #### 1. Flusso Operativo della Skill (Git-Driven):
 
 1. **Sync Baseline:** Lo sviluppatore esegue `git pull`. Il file `vex.json` viene scaricato localmente (precedentemente prelevato da GitLab CI da Dependency-Track).

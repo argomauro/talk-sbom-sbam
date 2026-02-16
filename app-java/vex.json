@@ -4,7 +4,7 @@
   "serialNumber": "urn:uuid:ef7335f7-906e-4d15-97c5-41779a58faf2",
   "version": 2,
   "metadata": {
-    "timestamp": "2026-02-16T17:00:31Z",
+    "timestamp": "2026-02-16T17:24:15Z",
     "tools": [
       {
         "vendor": "OWASP",
@@ -44,8 +44,12 @@
       ],
       "description": "A vulnerability was discovered in the PyYAML library in versions before 5.4. It allows arbitrary code execution during the loading of YAML files.",
       "analysis": {
-        "state": "in_triage",
-        "detail": "Vulnerability CVE-2020-14343 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-14343 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -547,8 +551,11 @@
       "updated": "2024-11-21T06:30:56Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-44420 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-44420 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -820,8 +827,11 @@
       "updated": "2024-11-21T06:57:11Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-28346 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-28346 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -866,8 +876,11 @@
       "updated": "2024-11-21T06:57:11Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-28347 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-28347 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -912,8 +925,11 @@
       "updated": "2024-11-21T07:09:10Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-34265 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-34265 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -948,8 +964,11 @@
       "updated": "2024-11-21T07:12:51Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-36359 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-36359 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -984,8 +1003,11 @@
       "updated": "2025-05-14T15:15:49Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-41323 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-41323 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1020,8 +1042,11 @@
       "updated": "2025-03-27T15:15:45Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-23969 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-23969 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1056,8 +1081,11 @@
       "updated": "2025-03-18T20:15:18Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-24580 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-24580 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1093,8 +1121,11 @@
       "updated": "2025-01-29T16:15:42Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-31047 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-31047 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1129,8 +1160,11 @@
       "updated": "2025-11-04T18:15:40Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-36053 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-36053 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1165,8 +1199,11 @@
       "updated": "2025-11-04T18:15:41Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-41164 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-41164 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1201,8 +1238,11 @@
       "updated": "2025-11-04T18:15:41Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-43665 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-43665 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1237,8 +1277,11 @@
       "updated": "2024-11-21T08:29:05Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-46695 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-46695 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1270,8 +1313,11 @@
       "updated": "2025-11-04T19:16:57Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-24680 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-24680 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1306,8 +1352,11 @@
       "updated": "2025-11-04T17:15:54Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-38875 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-38875 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1414,8 +1463,11 @@
       "updated": "2025-11-04T17:15:55Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-39614 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-39614 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1450,8 +1502,11 @@
       "updated": "2025-11-04T17:16:03Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-41989 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-41989 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1487,8 +1542,11 @@
       "updated": "2025-11-04T17:16:03Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-41991 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-41991 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1523,8 +1581,11 @@
       "updated": "2025-11-04T17:16:04Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-42005 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-42005 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1595,8 +1656,11 @@
       "updated": "2025-06-24T14:55:06Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-53907 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-53907 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1631,8 +1695,11 @@
       "updated": "2025-10-03T13:16:13Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-56374 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-56374 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1703,8 +1770,11 @@
       "updated": "2026-02-04T17:09:58Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-14550 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-14550 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1739,8 +1809,11 @@
       "updated": "2025-10-03T00:32:38Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-26699 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-26699 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1775,8 +1848,11 @@
       "updated": "2025-10-03T15:34:09Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-27556 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-27556 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1883,8 +1959,11 @@
       "updated": "2025-11-04T22:16:31Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-57833 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-57833 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1919,8 +1998,11 @@
       "updated": "2025-11-10T18:33:02Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-64458 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-64458 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1955,8 +2037,11 @@
       "updated": "2025-11-10T18:25:59Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-64459 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-64459 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1991,8 +2076,11 @@
       "updated": "2025-12-10T21:47:14Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-64460 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-64460 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2144,8 +2232,12 @@
       "published": "2018-06-27T12:29:00Z",
       "updated": "2024-11-21T03:19:53Z",
       "analysis": {
-        "state": "in_triage",
-        "detail": "Vulnerability CVE-2017-18342 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2017-18342 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2324,8 +2416,11 @@
       "updated": "2024-09-20T12:22:53Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2360,8 +2455,11 @@
       "updated": "2024-09-20T15:09:14Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2396,8 +2494,11 @@
       "updated": "2024-09-20T15:09:55Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2470,8 +2571,11 @@
       "updated": "2024-09-20T15:30:30Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2542,8 +2646,11 @@
       "updated": "2024-09-20T15:34:08Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2723,8 +2830,11 @@
       "updated": "2024-11-18T16:26:11Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2759,8 +2869,11 @@
       "updated": "2024-12-18T22:08:24Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2831,8 +2944,11 @@
       "updated": "2025-11-05T19:55:40Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2867,8 +2983,11 @@
       "updated": "2025-11-27T08:50:20Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2903,8 +3022,11 @@
       "updated": "2025-11-05T20:44:13Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2938,8 +3060,12 @@
       "published": "2019-01-04T17:45:26Z",
       "updated": "2024-10-16T20:51:27Z",
       "analysis": {
-        "state": "in_triage",
-        "detail": "Vulnerability GHSA-rprw-h62v-c2w7 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-rprw-h62v-c2w7 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2973,8 +3099,12 @@
       "published": "2021-03-25T21:26:26Z",
       "updated": "2024-10-25T21:31:46Z",
       "analysis": {
-        "state": "in_triage",
-        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {

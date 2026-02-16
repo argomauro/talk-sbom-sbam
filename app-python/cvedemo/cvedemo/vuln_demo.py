@@ -25,4 +25,4 @@ if __name__ == "__main__":
     print(f"Result: {result}")
     
     # To demonstrate a 'Reachable' vulnerability, uncomment the line below:
-    unsafe_processor(user_input)
+    #unsafe_processor(user_input)

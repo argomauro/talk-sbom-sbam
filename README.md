@@ -155,10 +155,11 @@ Questo garantisce che il repository git sia sempre la "Single Source of Truth" p
 
 L'integrazione con **Antigravity** è ora **AI-Native**, eliminando la necessità di configurazioni manuali o pattern hardcoded:
 
-1. **Dynamic CVE Interpretation**: L'IA legge la descrizione della vulnerabilità (CVE/GHSA) direttamente dal VEX e "capisce" quali funzioni o pattern pericolosi cercare.
-2. **Analisi Semantica Context-Aware**: Oltre a cercare pattern (es. `yaml.load()`), l'IA analizza il contesto per distinguere se il codice è in una funzione mai chiamata, se è commentato o se è effettivamente raggiungibile.
-3. **Evidence-Based Justification**: Genera automaticamente lo stato `not_affected` con giustificazioni tecniche dettagliate e riferimenti precisi a `file:linea` nel file `vex.json`.
-4. **Zero-Configuration Scalability**: Funziona su qualsiasi nuovo CVE senza dover aggiornare gli script di analisi, rendendo il triage scalabile all'infinito.
+- **AI-Native Reachability Analyst**: Un agente intelligente che interpreta dinamicamente le descrizioni delle CVE per identificare pattern pericolosi e scansionare il codice sorgente.
+- **Analisi Semantica Avanzata**: Il sistema distingue tra definizioni di funzioni, invocazioni effettive e codice commentato, riducendo drasticamente i falsi positivi.
+- **Selective Triage Modes**: Supporto per modalità `full` (scansione totale) e `critical` (focus prioritario su rischi elevati) per ottimizzare i tempi di sviluppo.
+- **VEX-as-Code**: Triage arricchito memorizzato direttamente nel repository in formato CycloneDX, sincronizzato automaticamente con Dependency-Track.
+- **Zero-Configuration Scalability**: Funziona su qualsiasi nuovo CVE senza dover aggiornare gli script di analisi, rendendo il triage scalabile all'infinito.
 
 ---
 

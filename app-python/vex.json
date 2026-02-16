@@ -4,7 +4,7 @@
   "serialNumber": "urn:uuid:ef7335f7-906e-4d15-97c5-41779a58faf2",
   "version": 3,
   "metadata": {
-    "timestamp": "2026-02-16T17:17:28Z",
+    "timestamp": "2026-02-16T17:24:15Z",
     "tools": [
       {
         "vendor": "OWASP",
@@ -2199,8 +2199,12 @@
       "published": "2018-06-27T12:29:00Z",
       "updated": "2024-11-21T03:19:53Z",
       "analysis": {
-        "state": "exploitable",
-        "detail": "Vulnerability CVE-2017-18342 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2017-18342 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -3023,8 +3027,12 @@
       "published": "2019-01-04T17:45:26Z",
       "updated": "2024-10-16T20:51:27Z",
       "analysis": {
-        "state": "exploitable",
-        "detail": "Vulnerability GHSA-rprw-h62v-c2w7 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-rprw-h62v-c2w7 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -3058,8 +3066,12 @@
       "published": "2021-03-25T21:26:26Z",
       "updated": "2024-10-25T21:31:46Z",
       "analysis": {
-        "state": "exploitable",
-        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-16. Reachable: Function `unsafe_processor()` contains vulnerable pattern 'yaml.load(' and is invoked in the codebase. Location: ./cvedemo/cvedemo/vuln_demo.py:15"
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
