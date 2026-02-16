@@ -151,13 +151,14 @@ In ogni repository, il file `.gitlab-ci.yml` gestisce l'intero ciclo di vita del
 
 Questo garantisce che il repository git sia sempre la "Single Source of Truth" per lo stato di sicurezza del progetto.
 
-## 🧠 6. AI-Driven VEX Triage (Antigravity)
+## 🧠 6. AI-Native VEX Triage (Antigravity Analyst)
 
-L'integrazione con **Antigravity** permette di ridurre drasticamente il numero di vulnerabilità da gestire manualmente:
+L'integrazione con **Antigravity** è ora **AI-Native**, eliminando la necessità di configurazioni manuali o pattern hardcoded:
 
-1. **Analisi contestuale**: L'IA scansiona il codice sorgente per verificare se le funzioni vulnerabili sono effettivamente richiamate (Reachability Analysis).
-2. **Generazione VEX "as-Code"**: Per le vulnerabilità non raggiungibili, l'IA genera automaticamente le giustificazioni tecniche nel file `vex.json`.
-3. **Zero Trust Integration**: La sincronizzazione avviene tramite commit, garantendo tracciabilità totale e sicurezza dei segreti (le API Key sono gestite solo dai runner).
+1. **Dynamic CVE Interpretation**: L'IA legge la descrizione della vulnerabilità (CVE/GHSA) direttamente dal VEX e "capisce" quali funzioni o pattern pericolosi cercare.
+2. **Analisi Semantica Context-Aware**: Oltre a cercare pattern (es. `yaml.load()`), l'IA analizza il contesto per distinguere se il codice è in una funzione mai chiamata, se è commentato o se è effettivamente raggiungibile.
+3. **Evidence-Based Justification**: Genera automaticamente lo stato `not_affected` con giustificazioni tecniche dettagliate e riferimenti precisi a `file:linea` nel file `vex.json`.
+4. **Zero-Configuration Scalability**: Funziona su qualsiasi nuovo CVE senza dover aggiornare gli script di analisi, rendendo il triage scalabile all'infinito.
 
 ---
 
@@ -165,7 +166,7 @@ L'integrazione con **Antigravity** permette di ridurre drasticamente il numero d
 
 1. **Push del Codice:** Fai un commit con una libreria vecchia.
 2. **Pipeline Consolidata:** Mostra lo stage `sync` che carica SBOM e gestisce il VEX.
-3. **Triage con Antigravity:** Apri l'IDE, lancia la skill "VEX Triage" e mostra l'arricchimento automatico del file `vex.json` basato sull'analisi del codice.
+3. **AI-Native Triage**: Apri l'IDE, lancia lo script di arricchimento e mostra come l'IA "legge" la CVE di PyYAML, scansiona il codice, rileva che `unsafe_processor()` è commentato e aggiorna il `vex.json` con precisione millimetrica.
 4. **Final Sync:** Pusha il VEX arricchito e mostra su Dependency-Track come le vulnerabilità passano a "Not Affected".
 
 

@@ -20,8 +20,8 @@ docker exec -it gitlab-runner gitlab-runner register \
   --docker-extra-hosts "host.docker.internal:host-gateway"
 ```
 
-### 3. Workflow VEX Triage (Antigravity)
-Dall'IDE Antigravity, esegui l'arricchimento offline:
+### 3. Workflow VEX Triage (AI-Native Analyst)
+Dall'IDE Antigravity, esegui l'arricchimento intelligente con l'AI-Native Analyst:
 
 ```bash
 python3 .agent/skills/vex-triage/scripts/generate_vex.py
