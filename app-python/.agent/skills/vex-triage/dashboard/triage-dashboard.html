@@ -311,6 +311,10 @@
 
         <div class="stats-summary" id="statsHeader">
             <div class="stat-item">
+                <span class="stat-value" id="fileTimestamp">--:--</span>
+                <span class="stat-label">File Timestamp (UTC)</span>
+            </div>
+            <div class="stat-item">
                 <span class="stat-value danger" id="actionRequiredCount">0</span>
                 <span class="stat-label">Action Required</span>
             </div>
@@ -384,6 +388,14 @@
 
             document.getElementById('actionRequiredCount').textContent = actionRequired;
             document.getElementById('triagedCount').textContent = triaged;
+
+            // Update file timestamp from metadata
+            if (currentData.metadata && currentData.metadata.timestamp) {
+                const ts = currentData.metadata.timestamp;
+                // Just show the time part for quick reading
+                const timePart = ts.split('T')[1].split('Z')[0];
+                document.getElementById('fileTimestamp').textContent = timePart;
+            }
         }
 
         function getSeverity(vuln) {
@@ -401,84 +413,33 @@
 
             let allVulns = currentData.vulnerabilities || [];
 
-            // --- DEDUPLICATION LOGIC ---
-            // Group vulnerabilities that refer to each other
-            const groups = [];
-            const processedIds = new Set();
-
-            allVulns.forEach(vuln => {
-                if (processedIds.has(vuln.id)) return;
-
-                const group = {
-                    main: vuln,
-                    aliases: [vuln.id],
-                    allIds: new Set([vuln.id])
-                };
-
-                // Find potential aliases in description
-                const desc = vuln.description || '';
-                const cveMatch = desc.match(/CVE-\d{4}-\d+/g);
-                const ghsaMatch = desc.match(/GHSA-[a-z0-9-]+/gi);
-
-                if (cveMatch) cveMatch.forEach(id => group.allIds.add(id));
-                if (ghsaMatch) ghsaMatch.forEach(id => group.allIds.add(id.toUpperCase()));
-
-                // Find other vulns that match these IDs or refer to this main ID
-                allVulns.forEach(other => {
-                    if (other.id === vuln.id || processedIds.has(other.id)) return;
-
-                    const otherDesc = other.description || '';
-                    const isLinked = group.allIds.has(other.id) ||
-                        otherDesc.includes(vuln.id) ||
-                        (cveMatch && cveMatch.some(id => otherDesc.includes(id))) ||
-                        (ghsaMatch && ghsaMatch.some(id => otherDesc.toLowerCase().includes(id.toLowerCase())));
-
-                    if (isLinked) {
-                        group.aliases.push(other.id);
-                        group.allIds.add(other.id);
-                        // Merge descriptions if one is significantly longer/better
-                        if (other.description && other.description.length > group.main.description.length) {
-                            group.main = other;
-                        }
-                        processedIds.add(other.id);
-                    }
-                });
-
-                groups.push(group);
-                processedIds.add(vuln.id);
-            });
-
-            // Filter groups based on the selected tab
-            let filteredGroups = groups;
+            // Render vulnerabilities directly (no deduplication to match Dependency-Track)
+            let filteredVulns = allVulns;
             if (currentFilter === 'action') {
-                filteredGroups = groups.filter(g =>
-                    !g.main.analysis || g.main.analysis.state === 'affected' ||
-                    g.main.analysis.state === 'under_investigation' || g.main.analysis.state === 'exploitable' || g.main.analysis.state === 'in_triage'
+                filteredVulns = allVulns.filter(v =>
+                    !v.analysis || v.analysis.state === 'affected' ||
+                    v.analysis.state === 'under_investigation' || v.analysis.state === 'exploitable' || v.analysis.state === 'in_triage'
                 );
             } else if (currentFilter === 'triaged') {
-                filteredGroups = groups.filter(g => g.main.analysis && g.main.analysis.state === 'not_affected');
+                filteredVulns = allVulns.filter(v => v.analysis && v.analysis.state === 'not_affected');
             }
 
-            if (filteredGroups.length === 0) {
+            if (filteredVulns.length === 0) {
                 grid.innerHTML = `<div class="empty-state"><p>Nessuna vulnerabilità trovata per questo filtro.</p></div>`;
                 return;
             }
 
-            // Render deduplicated cards
-            filteredGroups.forEach((group) => {
-                const vuln = group.main;
+            // Render cards
+            filteredVulns.forEach((vuln) => {
                 const severity = getSeverity(vuln);
                 const state = (vuln.analysis && vuln.analysis.state) || 'under_investigation';
                 const card = document.createElement('div');
                 card.className = `card ${['affected', 'exploitable', 'in_triage'].includes(state) ? 'affected' : ''}`;
 
-                const aliasText = group.aliases.length > 1 ? `<span class="badge" style="background: var(--border-color)">+ ${group.aliases.length - 1} Aliases: ${group.aliases.filter(id => id !== vuln.id).join(', ')}</span>` : '';
-
                 card.innerHTML = `
                     <div>
                         <span class="badge severity-${severity.toUpperCase()}">${severity}</span>
                         <span class="badge status-badge">${state.replace(/_/g, ' ')}</span>
-                        ${aliasText}
                     </div>
                     <span class="cve-id">${vuln.id}</span>
                     <p class="description">${vuln.description || 'Nessuna descrizione disponibile.'}</p>
