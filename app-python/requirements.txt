@@ -1,3 +1,4 @@
 Django==2.2.12      # Vulnerabile a diverse CVE di SQL injection e XSS
 PyYAML==5.3.1
 requests==2.31.0    # Vulnerabile a leak di credenziali via proxy
+Pillow==7.0.0

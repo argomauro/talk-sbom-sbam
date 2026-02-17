@@ -1,6 +1,31 @@
 import yaml
 import os
 
+##VULNERABILITA' PILLOW
+from django.shortcuts import render
+from .forms import UploadForm
+from PIL import Image # La libreria vulnerabile
+
+def upload_avatar(request):
+    if request.method == 'POST':
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            img_file = request.FILES['avatar']
+            
+            # Apertura dell'immagine per processing (punto di trigger)
+            try:
+                with Image.open(img_file) as img:
+                    # Un hacker potrebbe inviare un file "SGI" o "PCX" corrotto
+                    # che causa un crash o un overflow durante il caricamento dei pixel.
+                    img.verify() 
+                    img.thumbnail((100, 100))
+                    img.save(f"thumb_{img_file.name}")
+            except Exception as e:
+                return render(request, 'error.html', {'error': str(e)})
+                
+    return render(request, 'upload.html', {'form': UploadForm()})
+
+##VULNERABILITA' PYYAML
 def safe_processor(data):
     # SCENARIO A: SAFE PATH (NOT VULNERABLE)
     # yaml.safe_load() only resolves standard YAML tags and is safe against RCE.
@@ -25,4 +50,8 @@ if __name__ == "__main__":
     print(f"Result: {result}")
     
     # To demonstrate a 'Reachable' vulnerability, uncomment the line below:
-    #unsafe_processor(user_input)
+    unsafe_processor(user_input)
+    print('Sto chiamando un metodo con vulnerabilita')
+    request = ''
+    upload_avatar(request)
+    print('Sto chiamando un metodo con vulnerabilita per Pillow')

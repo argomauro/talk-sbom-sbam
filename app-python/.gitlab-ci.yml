@@ -26,16 +26,26 @@ dtrack_sync:
       DT_URL="http://host.docker.internal:8081"
 
       echo "--- 1. Caricamento SBOM ---"
-      curl -f -X "POST" "$DT_URL/api/v1/bom" \
+      UPLOAD_TOKEN=$(curl -f -s -X "POST" "$DT_URL/api/v1/bom" \
            -H 'Content-Type: multipart/form-data' \
            -H "X-Api-Key: $DT_API_KEY" \
            -F "projectName=$CI_PROJECT_NAME" \
            -F "projectVersion=$CI_COMMIT_BRANCH" \
            -F "autoCreate=true" \
-           -F "bom=@bom.json"
+           -F "bom=@bom.json" | sed -E 's/.*"token":"([^"]+)".*/\1/')
 
-      echo "In attesa dell'elaborazione (10s)..."
-      sleep 10
+      echo "Upload completato (Token: $UPLOAD_TOKEN). In attesa dell'analisi..."
+      # Polling per attendere la fine dell'elaborazione
+      for i in $(seq 1 30); do
+        PROCESSING=$(curl -f -s -X "GET" "$DT_URL/api/v1/bom/token/$UPLOAD_TOKEN" \
+             -H "X-Api-Key: $DT_API_KEY" | grep -o '"processing":true' || true)
+        if [ -z "$PROCESSING" ]; then
+          echo "Analisi completata con successo."
+          break
+        fi
+        echo "Ancora in elaborazione... ($i/30)"
+        sleep 5
+      done
 
       echo "--- 2. Recupero UUID Progetto ---"
       PROJECT_UUID=$(curl -f -s -G "$DT_URL/api/v1/project" \

@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -36,11 +37,33 @@ def is_vulnerability_reachable(vuln_id, vuln_data, lang):
     affects = vuln_data.get("affects", [])
     if affects and len(affects) > 0:
         ref = affects[0].get("ref", "")
-        if ":" in ref:
+        if ":" in ref and "@" in ref:
+            # pkg:pypi/package@version
             package_name = ref.split(":")[1].split("@")[0]
+            if "/" in package_name: package_name = package_name.split("/")[-1]
         elif "/" in ref:
             package_name = ref.split("/")[-1].split("@")[0]
     
+    # NEW: Fallback - try to extract from description if unknown
+    if package_name == "unknown":
+        # Strategy: Look for common security library names in description
+        known_libs = ["Django", "Pillow", "PyYAML", "Requests", "JinJa2", "Flask", "SQLAlchemy"]
+        for lib in known_libs:
+            if lib.lower() in description.lower():
+                package_name = lib
+                break
+        
+        if package_name == "unknown":
+            # Fallback to the first word if it looks like a package (CamelCase or capitalized)
+            match = re.search(r'^([A-Z][a-zA-Z0-9_\-]+)', description)
+            if match:
+                package_name = match.group(1)
+            else:
+                # Last resort: search for "in [Package]"
+                match = re.search(r'in ([a-zA-Z0-9\-_]+)', description)
+                if match:
+                    package_name = match.group(1)
+
     # Use LLM analyzer
     analyzer = LLMCVEAnalyzer()
     is_reachable, reason = analyzer.analyze_vulnerability(

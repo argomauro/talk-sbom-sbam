@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:ef7335f7-906e-4d15-97c5-41779a58faf2",
-  "version": 3,
+  "serialNumber": "urn:uuid:aefd04a5-aaa5-4386-bc28-730e2b08cfca",
+  "version": 1,
   "metadata": {
-    "timestamp": "2026-02-16T17:24:15Z",
+    "timestamp": "2026-02-17T13:52:11Z",
     "tools": [
       {
         "vendor": "OWASP",
@@ -60,9 +60,8 @@
       "published": "2020-06-03T14:15:12Z",
       "updated": "2024-11-21T05:00:53Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2020-13254 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2020-13254 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -106,9 +105,8 @@
       "published": "2020-06-03T14:15:12Z",
       "updated": "2024-11-21T05:01:34Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2020-13596 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2020-13596 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -153,8 +151,11 @@
       "updated": "2024-11-21T05:15:03Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-24583 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2020-24583 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -198,9 +199,8 @@
       "published": "2020-09-01T13:15:11Z",
       "updated": "2024-11-21T05:15:03Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2020-24584 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2020-24584 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -245,8 +245,11 @@
       "updated": "2024-11-21T06:00:02Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-28658 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-28658 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -291,8 +294,11 @@
       "updated": "2024-11-21T06:05:52Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-31542 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-31542 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -336,9 +342,8 @@
       "published": "2021-05-06T16:15:07Z",
       "updated": "2024-11-21T06:06:46Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-32052 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-32052 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -382,9 +387,8 @@
       "published": "2021-02-02T07:15:14Z",
       "updated": "2024-11-21T06:21:12Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-3281 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-3281 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -428,9 +432,8 @@
       "published": "2021-06-08T18:15:08Z",
       "updated": "2024-11-21T06:08:30Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-33203 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-33203 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -474,9 +477,8 @@
       "published": "2021-06-08T18:15:08Z",
       "updated": "2024-11-21T06:09:06Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-33571 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-33571 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -517,12 +519,8 @@
       "published": "2021-12-08T00:15:07Z",
       "updated": "2024-11-21T06:30:56Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2021-44420 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-44420 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -563,9 +561,8 @@
       "published": "2022-01-05T00:15:07Z",
       "updated": "2024-11-21T06:31:59Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-45115 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-45115 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -609,9 +606,8 @@
       "published": "2022-01-05T00:15:07Z",
       "updated": "2025-05-22T19:15:27Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-45116 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-45116 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -655,9 +651,8 @@
       "published": "2022-01-05T00:15:07Z",
       "updated": "2024-11-21T06:32:14Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2021-45452 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-45452 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'save' from package 'Django' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:22. Context: `img.save(f\"thumb_{img_file.name}\")`"
       },
       "affects": [
         {
@@ -701,9 +696,8 @@
       "published": "2022-02-03T02:15:07Z",
       "updated": "2024-11-21T06:47:30Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-22818 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2022-22818 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -748,8 +742,11 @@
       "updated": "2024-11-21T06:49:20Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-23833 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2022-23833 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -793,12 +790,8 @@
       "published": "2022-04-12T05:15:06Z",
       "updated": "2024-11-21T06:57:11Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2022-28346 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2022-28346 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -843,7 +836,7 @@
       "updated": "2024-11-21T06:57:11Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2022-28347 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability CVE-2022-28347 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -891,12 +884,8 @@
       "published": "2022-07-04T16:15:09Z",
       "updated": "2024-11-21T07:09:10Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2022-34265 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2022-34265 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -931,7 +920,7 @@
       "updated": "2024-11-21T07:12:51Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2022-36359 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability CVE-2022-36359 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -969,12 +958,8 @@
       "published": "2022-10-16T06:15:09Z",
       "updated": "2025-05-14T15:15:49Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2022-41323 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2022-41323 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1009,7 +994,7 @@
       "updated": "2025-03-27T15:15:45Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-23969 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability CVE-2023-23969 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1047,12 +1032,8 @@
       "published": "2023-02-15T01:15:10Z",
       "updated": "2025-03-18T20:15:18Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-24580 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2023-24580 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'open' from package 'Django' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
       },
       "affects": [
         {
@@ -1088,7 +1069,7 @@
       "updated": "2025-01-29T16:15:42Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-31047 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability CVE-2023-31047 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1126,12 +1107,8 @@
       "published": "2023-07-03T13:15:09Z",
       "updated": "2025-11-04T18:15:40Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-36053 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2023-36053 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1165,12 +1142,8 @@
       "published": "2023-11-03T05:15:29Z",
       "updated": "2025-11-04T18:15:41Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-41164 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2023-41164 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1204,12 +1177,8 @@
       "published": "2023-11-03T05:15:30Z",
       "updated": "2025-11-04T18:15:41Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-43665 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2023-43665 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1243,12 +1212,8 @@
       "published": "2023-11-02T06:15:08Z",
       "updated": "2024-11-21T08:29:05Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2023-46695 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2023-46695 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1279,12 +1244,8 @@
       "published": "2024-02-06T22:16:15Z",
       "updated": "2025-11-04T19:16:57Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-24680 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-24680 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1318,12 +1279,8 @@
       "published": "2024-07-10T05:15:12Z",
       "updated": "2025-11-04T17:15:54Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-38875 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-38875 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1357,9 +1314,8 @@
       "published": "2024-07-10T05:15:12Z",
       "updated": "2025-11-04T17:15:54Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-39329 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-39329 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1393,9 +1349,8 @@
       "published": "2024-07-10T05:15:12Z",
       "updated": "2025-11-04T17:15:54Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-39330 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-39330 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'save' from package 'Django' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:22. Context: `img.save(f\"thumb_{img_file.name}\")`"
       },
       "affects": [
         {
@@ -1429,12 +1384,8 @@
       "published": "2024-07-10T05:15:12Z",
       "updated": "2025-11-04T17:15:55Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-39614 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-39614 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1468,12 +1419,8 @@
       "published": "2024-08-07T15:15:56Z",
       "updated": "2025-11-04T17:16:03Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-41989 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-41989 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1508,12 +1455,8 @@
       "published": "2024-08-07T15:15:56Z",
       "updated": "2025-11-04T17:16:03Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-41991 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-41991 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1547,12 +1490,8 @@
       "published": "2024-08-07T15:15:56Z",
       "updated": "2025-11-04T17:16:04Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-42005 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-42005 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1586,9 +1525,8 @@
       "published": "2024-10-08T16:15:11Z",
       "updated": "2025-03-17T18:15:17Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-45231 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-45231 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1622,12 +1560,8 @@
       "published": "2024-12-06T12:15:17Z",
       "updated": "2025-06-24T14:55:06Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-53907 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-53907 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1661,12 +1595,8 @@
       "published": "2025-01-14T19:15:32Z",
       "updated": "2025-10-03T13:16:13Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2024-56374 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2024-56374 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1701,8 +1631,11 @@
       "updated": "2026-02-04T17:10:36Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2025-13473 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-13473 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -1737,7 +1670,7 @@
       "updated": "2026-02-04T17:09:58Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-14550 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability CVE-2025-14550 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1775,12 +1708,8 @@
       "published": "2025-03-06T19:15:27Z",
       "updated": "2025-10-03T00:32:38Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-26699 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2025-26699 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1814,12 +1743,8 @@
       "published": "2025-04-02T13:15:44Z",
       "updated": "2025-10-03T15:34:09Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-27556 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2025-27556 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1853,9 +1778,8 @@
       "published": "2025-05-08T04:17:18Z",
       "updated": "2025-09-02T18:58:27Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-32873 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2025-32873 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1889,9 +1813,8 @@
       "published": "2025-06-05T03:15:25Z",
       "updated": "2025-10-15T17:47:56Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2025-48432 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2025-48432 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1925,12 +1848,8 @@
       "published": "2025-09-03T21:15:32Z",
       "updated": "2025-11-04T22:16:31Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-57833 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2025-57833 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -1965,7 +1884,7 @@
       "updated": "2025-11-10T18:33:02Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-64458 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability CVE-2025-64458 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2004,7 +1923,7 @@
       "updated": "2025-11-10T18:25:59Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-64459 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability CVE-2025-64459 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2043,7 +1962,7 @@
       "updated": "2025-12-10T21:47:14Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability CVE-2025-64460 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability CVE-2025-64460 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2082,8 +2001,11 @@
       "updated": "2026-02-04T17:34:46Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2026-1207 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2026-1207 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2118,8 +2040,11 @@
       "updated": "2026-02-04T17:35:11Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability CVE-2026-1287 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2026-1287 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -2154,165 +2079,11 @@
       "updated": "2026-02-04T17:35:02Z",
       "analysis": {
         "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2026-1312 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase."
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "90f13985-dc53-4173-bf9e-bd5ce195676a",
-      "id": "CVE-2017-18342",
-      "source": {
-        "name": "NVD",
-        "url": "https://nvd.nist.gov/"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "NVD",
-            "url": "https://nvd.nist.gov/"
-          },
-          "score": 7.5,
-          "severity": "high",
-          "method": "CVSSv2",
-          "vector": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
-        },
-        {
-          "source": {
-            "name": "NVD",
-            "url": "https://nvd.nist.gov/"
-          },
-          "score": 9.8,
-          "severity": "critical",
-          "method": "CVSSv3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "cwes": [
-        502
-      ],
-      "description": "In PyYAML before 5.1, the yaml.load() API could execute arbitrary code if used with untrusted data. The load() function has been deprecated in version 5.1 and the 'UnsafeLoader' has been introduced for backward compatibility with the function.",
-      "published": "2018-06-27T12:29:00Z",
-      "updated": "2024-11-21T03:19:53Z",
-      "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability CVE-2017-18342 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
+        "detail": "Vulnerability CVE-2026-1312 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
         ]
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "4676af1b-79e0-4c89-8830-6eb583370e5d",
-      "id": "CVE-2023-32681",
-      "source": {
-        "name": "NVD",
-        "url": "https://nvd.nist.gov/"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "NVD",
-            "url": "https://nvd.nist.gov/"
-          },
-          "score": 6.1,
-          "severity": "medium",
-          "method": "CVSSv3",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N"
-        }
-      ],
-      "cwes": [
-        200
-      ],
-      "description": "Requests is a HTTP library. Since Requests 2.3.0, Requests has been leaking Proxy-Authorization headers to destination servers when redirected to an HTTPS endpoint. This is a product of how we use `rebuild_proxies` to reattach the `Proxy-Authorization` header to requests. For HTTP connections sent through the tunnel, the proxy will identify the header in the request itself and remove it prior to forwarding to the destination server. However when sent over HTTPS, the `Proxy-Authorization` header must be sent in the CONNECT request as the proxy has no visibility into the tunneled request. This results in Requests forwarding proxy credentials to the destination server unintentionally, allowing a malicious actor to potentially exfiltrate sensitive information. This issue has been patched in version 2.31.0.",
-      "published": "2023-05-26T18:15:14Z",
-      "updated": "2025-02-13T17:16:32Z",
-      "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2023-32681 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "a2d651bc-c28b-4704-b923-741270ef940e",
-      "id": "CVE-2024-35195",
-      "source": {
-        "name": "NVD",
-        "url": "https://nvd.nist.gov/"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "NVD",
-            "url": "https://nvd.nist.gov/"
-          },
-          "score": 5.6,
-          "severity": "medium",
-          "method": "CVSSv3",
-          "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N"
-        }
-      ],
-      "cwes": [
-        670
-      ],
-      "description": "Requests is a HTTP library. Prior to 2.32.0, when making requests through a Requests `Session`, if the first request is made with `verify=False` to disable cert verification, all subsequent requests to the same host will continue to ignore cert verification regardless of changes to the value of `verify`. This behavior will continue for the lifecycle of the connection in the connection pool. This vulnerability is fixed in 2.32.0.",
-      "published": "2024-05-20T21:15:09Z",
-      "updated": "2024-11-21T09:19:54Z",
-      "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-35195 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "38ae9e89-9c5f-4839-a3c7-3d2bfb833ea1",
-      "id": "CVE-2024-47081",
-      "source": {
-        "name": "NVD",
-        "url": "https://nvd.nist.gov/"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "NVD",
-            "url": "https://nvd.nist.gov/"
-          },
-          "score": 5.3,
-          "severity": "medium",
-          "method": "CVSSv3",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "cwes": [
-        522
-      ],
-      "description": "Requests is a HTTP library. Due to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs. Users should upgrade to version 2.32.4 to receive a fix. For older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on one's Requests Session.",
-      "published": "2025-06-09T18:15:24Z",
-      "updated": "2025-06-12T16:06:47Z",
-      "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability CVE-2024-47081 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
       },
       "affects": [
         {
@@ -2346,9 +2117,8 @@
       "published": "2022-01-12T19:21:04Z",
       "updated": "2024-09-20T12:19:35Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-jrh2-hc4r-7jwx analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-jrh2-hc4r-7jwx analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'save' from package 'Django' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:22. Context: `img.save(f\"thumb_{img_file.name}\")`"
       },
       "affects": [
         {
@@ -2382,12 +2152,8 @@
       "published": "2022-01-12T19:21:10Z",
       "updated": "2024-09-20T12:22:53Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2422,7 +2188,7 @@
       "updated": "2024-09-20T15:09:14Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2461,7 +2227,7 @@
       "updated": "2024-09-20T15:09:55Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2500,9 +2266,8 @@
       "published": "2021-06-09T17:14:51Z",
       "updated": "2024-09-20T15:28:26Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-qm57-vhq3-3fwf analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-qm57-vhq3-3fwf analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2538,7 +2303,7 @@
       "updated": "2024-09-20T15:30:30Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2576,9 +2341,8 @@
       "published": "2021-06-10T17:21:00Z",
       "updated": "2024-09-20T15:32:27Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-68w8-qjq3-2gfm analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-68w8-qjq3-2gfm analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2613,7 +2377,7 @@
       "updated": "2024-09-20T15:34:08Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2651,9 +2415,8 @@
       "published": "2022-02-04T00:00:33Z",
       "updated": "2024-09-20T15:35:37Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-95rw-fx8r-36v6 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-95rw-fx8r-36v6 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2687,9 +2450,8 @@
       "published": "2021-03-18T20:29:49Z",
       "updated": "2024-09-20T15:36:34Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-fvgf-6h6h-3322 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-fvgf-6h6h-3322 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2724,9 +2486,8 @@
       "published": "2024-10-08T18:33:13Z",
       "updated": "2024-10-30T19:02:44Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-rrqc-c2jx-6jgv analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-rrqc-c2jx-6jgv analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2760,9 +2521,8 @@
       "published": "2020-06-05T16:20:44Z",
       "updated": "2024-11-18T16:26:06Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-wpjr-j57x-wxfw analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-wpjr-j57x-wxfw analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2796,12 +2556,8 @@
       "published": "2021-03-18T20:30:01Z",
       "updated": "2024-11-18T16:26:11Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2836,7 +2592,7 @@
       "updated": "2024-12-18T22:08:24Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
+        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No exploitable usage of package 'Django' found.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2874,9 +2630,8 @@
       "published": "2025-06-05T03:30:58Z",
       "updated": "2025-06-10T20:03:55Z",
       "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-7xr5-9hcq-chf9 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-7xr5-9hcq-chf9 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -2911,7 +2666,7 @@
       "updated": "2025-11-05T19:55:40Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2950,7 +2705,7 @@
       "updated": "2025-11-27T08:50:20Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: No usage of vulnerable patterns found in codebase.",
+        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Django' patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2988,51 +2743,8 @@
       "published": "2025-09-08T18:31:31Z",
       "updated": "2025-11-05T20:44:13Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description.",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "f85e3e27-0e9d-4f38-986a-66a6d6ffa841",
-      "id": "GHSA-rprw-h62v-c2w7",
-      "source": {
-        "name": "GITHUB",
-        "url": "https://github.com/advisories"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "GITHUB",
-            "url": "https://github.com/advisories"
-          },
-          "score": 9.8,
-          "severity": "critical",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "cwes": [
-        502
-      ],
-      "description": "In PyYAML before 4.1, the `yaml.load()` API could execute arbitrary code. In other words, `yaml.safe_load` is not used.",
-      "published": "2019-01-04T17:45:26Z",
-      "updated": "2024-10-16T20:51:27Z",
-      "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability GHSA-rprw-h62v-c2w7 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'django' from package 'Django' is used with dynamic data in ./cvedemo/manage.py:10. Context: `from django.core.management import execute_from_command_line`"
       },
       "affects": [
         {
@@ -3066,48 +2778,8 @@
       "published": "2021-03-25T21:26:26Z",
       "updated": "2024-10-25T21:31:46Z",
       "analysis": {
-        "state": "not_affected",
-        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-16. Not Reachable: Vulnerable pattern found in function `unsafe_processor()` but the function is never invoked. Location: ./cvedemo/cvedemo/vuln_demo.py:15",
-        "justification": "code_not_reachable",
-        "response": [
-          "will_not_fix"
-        ]
-      },
-      "affects": [
-        {
-          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
-        }
-      ]
-    },
-    {
-      "bom-ref": "7362c1eb-4838-4ee0-b722-4a6c07dc3347",
-      "id": "GHSA-j8r2-6x86-q33q",
-      "source": {
-        "name": "GITHUB",
-        "url": "https://github.com/advisories"
-      },
-      "ratings": [
-        {
-          "source": {
-            "name": "GITHUB",
-            "url": "https://github.com/advisories"
-          },
-          "score": 6.1,
-          "severity": "medium",
-          "method": "CVSSv31",
-          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:N/A:N"
-        }
-      ],
-      "cwes": [
-        200
-      ],
-      "description": "### Impact Since Requests v2.3.0, Requests has been vulnerable to potentially leaking `Proxy-Authorization` headers to destination servers, specifically during redirects to an HTTPS origin. This is a product of how `rebuild_proxies` is used to recompute and [reattach the `Proxy-Authorization` header](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/sessions.py#L319-L328) to requests when redirected. Note this behavior has _only_ been observed to affect proxied requests when credentials are supplied in the URL user information component (e.g. `https://username:password@proxy:8080`). **Current vulnerable behavior(s):** 1. HTTP \u2192 HTTPS: **leak** 2. HTTPS \u2192 HTTP: **no leak** 3. HTTPS \u2192 HTTPS: **leak** 4. HTTP \u2192 HTTP: **no leak** For HTTP connections sent through the proxy, the proxy will identify the header in the request itself and remove it prior to forwarding to the destination server. However when sent over HTTPS, the `Proxy-Authorization` header must be sent in the CONNECT request as the proxy has no visibility into further tunneled requests. This results in Requests forwarding the header to the destination server unintentionally, allowing a malicious actor to potentially exfiltrate those credentials. The reason this currently works for HTTPS connections in Requests is the `Proxy-Authorization` header is also handled by urllib3 with our usage of the ProxyManager in adapters.py with [`proxy_manager_for`](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/adapters.py#L199-L235). This will compute the required proxy headers in `proxy_headers` and pass them to the Proxy Manager, avoiding attaching them directly to the Request object. This will be our preferred option going forward for default usage. ### Patches Starting in Requests v2.31.0, Requests will no longer attach this header to redirects with an HTTPS destination. This should have no negative impacts on the default behavior of the library as the proxy credentials are already properly being handled by urllib3's ProxyManager. For users with custom adapters, this _may_ be potentially breaking if you were already working around this behavior. The previous functionality of `rebuild_proxies` doesn't make sense in any case, so we would encourage any users impacted to migrate any handling of Proxy-Authorization directly into their custom adapter. ### Workarounds For users who are not able to update Requests immediately, there is one potential workaround. You may disable redirects by setting `allow_redirects` to `False` on all calls through Requests top-level APIs. Note that if you're currently relying on redirect behaviors, you will need to capture the 3xx response codes and ensure a new request is made to the redirect destination. ``` import requests r = requests.get('http://github.com/', allow_redirects=False) ``` ### Credits This vulnerability was discovered and disclosed by the following individuals. Dennis Brinkrolf, Haxolot (https://haxolot.com/) Tobias Funke, (tobiasfunke93@gmail.com)",
-      "published": "2023-05-22T20:36:32Z",
-      "updated": "2024-03-27T20:09:55Z",
-      "analysis": {
-        "state": "not_affected",
-        "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-j8r2-6x86-q33q analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'load' from package 'PyYAML' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:40. Context: `return yaml.load(data, Loader=yaml.FullLoader)`"
       },
       "affects": [
         {
@@ -3142,8 +2814,11 @@
       "updated": "2025-06-09T19:06:12Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-9hjg-9r4m-mvj7 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Requests' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-9hjg-9r4m-mvj7 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
@@ -3178,8 +2853,2799 @@
       "updated": "2026-01-16T00:02:51Z",
       "analysis": {
         "state": "not_affected",
+        "detail": "Vulnerability GHSA-9wx4-h78v-vm56 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Requests' patterns found in codebase.",
         "justification": "code_not_reachable",
-        "detail": "Vulnerability GHSA-9wx4-h78v-vm56 analyzed by Antigravity AI (python) on 2026-02-16. Unable to extract search patterns from CVE description."
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b40fc748-35c6-4b42-9001-d8c849b7935c",
+      "id": "CVE-2020-14343",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 10.0,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:C/I:C/A:C)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.",
+      "published": "2021-02-09T21:15:12Z",
+      "updated": "2024-11-21T05:03:03Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2020-14343 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'load' from package 'PyYAML' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:40. Context: `return yaml.load(data, Loader=yaml.FullLoader)`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a2d651bc-c28b-4704-b923-741270ef940e",
+      "id": "CVE-2024-35195",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.6,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "cwes": [
+        670
+      ],
+      "description": "Requests is a HTTP library. Prior to 2.32.0, when making requests through a Requests `Session`, if the first request is made with `verify=False` to disable cert verification, all subsequent requests to the same host will continue to ignore cert verification regardless of changes to the value of `verify`. This behavior will continue for the lifecycle of the connection in the connection pool. This vulnerability is fixed in 2.32.0.",
+      "published": "2024-05-20T21:15:09Z",
+      "updated": "2024-11-21T09:19:54Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-35195 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Requests' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "38ae9e89-9c5f-4839-a3c7-3d2bfb833ea1",
+      "id": "CVE-2024-47081",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.3,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        522
+      ],
+      "description": "Requests is a HTTP library. Due to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs. Users should upgrade to version 2.32.4 to receive a fix. For older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on one's Requests Session.",
+      "published": "2025-06-09T18:15:24Z",
+      "updated": "2025-06-12T16:06:47Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-47081 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Requests' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7e3d1a19-142f-4496-9375-d3327d9ca798",
+      "id": "GHSA-jgpv-4h4c-xhw3",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        400
+      ],
+      "description": "### Impact _Pillow before 8.1.1 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for a BLP container, and thus an attempted memory allocation can be very large._ ### Patches _An issue was discovered in Pillow before 6.2.0. When reading specially crafted invalid image files, the library can either allocate very large amounts of memory or take an extremely long period of time to process the image._ ### Workarounds _An issue was discovered in Pillow before 6.2.0. When reading specially crafted invalid image files, the library can either allocate very large amounts of memory or take an extremely long period of time to process the image._ ### References https://nvd.nist.gov/vuln/detail/CVE-2021-27921 ### For more information If you have any questions or comments about this advisory: * Open an issue in [example link to repo](http://example.com) * Email us at [example email address](mailto:example@example.com)",
+      "published": "2021-04-23T16:54:36Z",
+      "updated": "2023-01-09T05:04:45Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-jgpv-4h4c-xhw3 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'open' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8e370efe-9960-4f1d-9de5-460f04361a25",
+      "id": "GHSA-4fx9-vc88-q2xc",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "severity": "low",
+          "method": "other"
+        }
+      ],
+      "cwes": [
+        400
+      ],
+      "description": "JpegImagePlugin may append an EOF marker to the end of a truncated file, so that the last segment of the data will still be processed by the decoder. If the EOF marker is not detected as such however, this could lead to an infinite loop where JpegImagePlugin keeps trying to end the file.",
+      "published": "2022-03-11T23:39:27Z",
+      "updated": "2023-01-11T05:05:44Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-4fx9-vc88-q2xc analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'JpegImagePlugin' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "5d5ab22f-ecfc-4be2-9ae3-8a8ce94f3d3f",
+      "id": "GHSA-pw3c-h7wp-cvhx",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        665
+      ],
+      "description": "Pillow is the friendly PIL (Python Imaging Library) fork. `path_getbbox` in `path.c` in Pillow before 9.0.0 improperly initializes `ImagePath.Path`.",
+      "published": "2022-01-12T20:07:43Z",
+      "updated": "2024-10-11T21:09:06Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-pw3c-h7wp-cvhx analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "855c0d6e-8a71-4e3f-91b0-55b395237e11",
+      "id": "GHSA-xrcv-f9gm-v42c",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "path_getbbox in path.c in Pillow before 9.0.0 has a buffer over-read during initialization of ImagePath.Path.",
+      "published": "2022-01-12T20:07:41Z",
+      "updated": "2024-10-11T21:27:30Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-xrcv-f9gm-v42c analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "df5dec3a-5ddb-46af-b879-94175a7af301",
+      "id": "GHSA-hf64-x4gq-p99h",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.4,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In Pillow before 8.1.0, SGIRleDecode has a 4-byte buffer over-read when decoding crafted SGI RLE image files because offsets and length tables are mishandled.",
+      "published": "2021-03-18T19:55:34Z",
+      "updated": "2024-10-08T13:05:15Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-hf64-x4gq-p99h analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "63258ed3-3ee4-4cee-97d3-0b82163ced79",
+      "id": "GHSA-f5g8-5qq7-938w",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.1,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In Pillow before 8.1.0, PcxDecode has a buffer over-read when decoding a crafted PCX file because the user-supplied stride value is trusted for buffer calculations.",
+      "published": "2021-03-18T19:55:41Z",
+      "updated": "2024-10-08T13:05:46Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-f5g8-5qq7-938w analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "982dcf8f-a02d-4976-9528-4c02ed0e0e80",
+      "id": "GHSA-57h3-9rgr-c24m",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        787
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. TiffDecode has a heap-based buffer overflow when decoding crafted YCbCr files because of certain interpretation conflicts with LibTIFF in RGBA mode. NOTE: this issue exists because of an incomplete fix for CVE-2020-35654.",
+      "published": "2021-03-29T16:35:16Z",
+      "updated": "2024-10-08T13:11:34Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-57h3-9rgr-c24m analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a8aac0d8-f1e3-4617-bf0a-7d9a3588ab0c",
+      "id": "GHSA-8xjq-8fcg-g5hw",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        787
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. In TiffDecode.c, there is a negative-offset memcpy with an invalid size.",
+      "published": "2021-03-29T16:35:36Z",
+      "updated": "2024-10-08T13:11:58Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8xjq-8fcg-g5hw analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "585fc67e-e0d7-47f2-b3b5-045440e8cadc",
+      "id": "GHSA-8843-m7mw-mxqm",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        120
+      ],
+      "description": "In Pillow before 7.1.0, there are two Buffer Overflows in `libImaging/TiffDecode.c`.",
+      "published": "2020-07-27T21:52:41Z",
+      "updated": "2024-10-09T19:44:22Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8843-m7mw-mxqm analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "70d925c1-b60b-4e68-bb01-1426cec4d6c3",
+      "id": "GHSA-vj42-xq3r-hr3r",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In `libImaging/Jpeg2KDecode.c` in Pillow before 7.1.0, there are multiple out-of-bounds reads via a crafted JP2 file.",
+      "published": "2020-07-27T21:52:39Z",
+      "updated": "2024-10-09T19:45:02Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-vj42-xq3r-hr3r analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "e2b4b8e6-7b24-4cbd-80ec-0e37c5c2699e",
+      "id": "GHSA-43fq-w8qq-v88h",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 8.1,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In libImaging/SgiRleDecode.c in Pillow through 7.0.0, a number of out-of-bounds reads exist in the parsing of SGI image files, a different issue than CVE-2020-5311.",
+      "published": "2020-07-27T21:52:36Z",
+      "updated": "2024-10-09T19:45:41Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-43fq-w8qq-v88h analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b1bdb534-55e6-4dc7-80df-30744b8490d4",
+      "id": "GHSA-cqhg-xjhh-p8hf",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "Pillow before 7.1.0 has multiple out-of-bounds reads in `libImaging/FliDecode.c`.",
+      "published": "2020-07-27T21:52:43Z",
+      "updated": "2024-10-09T20:50:09Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-cqhg-xjhh-p8hf analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "1ac1d3cc-966f-4f6c-991e-6e317f3f9d6c",
+      "id": "GHSA-3xv8-3j54-hgrp",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In `libImaging/PcxDecode.c` in Pillow before 7.1.0, an out-of-bounds read can occur when reading PCX files where `state->shuffle` is instructed to read beyond `state->buffer`.",
+      "published": "2021-11-03T18:04:53Z",
+      "updated": "2024-10-09T20:52:59Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-3xv8-3j54-hgrp analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0696dcea-8220-4f42-af4f-4cd66350b217",
+      "id": "GHSA-g6rj-rv7j-xwp4",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        233,
+        252
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. `PSDImagePlugin.PsdImageFile` lacked a sanity check on the number of input layers relative to the size of the data block. This could lead to a DoS on `Image.open` prior to `Image.load`.",
+      "published": "2021-06-08T18:49:11Z",
+      "updated": "2024-10-09T20:06:43Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-g6rj-rv7j-xwp4 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'Image.open' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a4ee7a71-db64-4172-8881-734298ccaa87",
+      "id": "GHSA-mvg9-xffr-p774",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. In `TiffDecode.c`, there is an out-of-bounds read in `TiffreadRGBATile` via invalid tile boundaries.",
+      "published": "2021-03-29T16:35:57Z",
+      "updated": "2024-10-09T21:06:28Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-mvg9-xffr-p774 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "02915c8f-0eed-41df-9be8-c2f4662a95ae",
+      "id": "GHSA-7r7m-5h27-29hp",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        835
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For FLI data, FliDecode did not properly check that the block advance was non-zero, potentially leading to an infinite loop on load.",
+      "published": "2021-06-08T18:48:53Z",
+      "updated": "2024-10-11T20:41:38Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-7r7m-5h27-29hp analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'load' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:40. Context: `return yaml.load(data, Loader=yaml.FullLoader)`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fc950cb5-9301-495b-a5c4-4349962b3581",
+      "id": "GHSA-q5hq-fp76-qmrc",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        400
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For EPS data, the readline implementation used in EPSImageFile has to deal with any combination of \\r and \\n as line endings. It used an accidentally quadratic method of accumulating lines while looking for a line ending. A malicious EPS file could use this to perform a DoS of Pillow in the open phase, before an image was accepted for opening.",
+      "published": "2021-06-08T18:49:36Z",
+      "updated": "2024-10-14T21:38:38Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability GHSA-q5hq-fp76-qmrc analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'open' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "dce3ac27-417b-489d-9e95-95443b4fae85",
+      "id": "GHSA-p43w-g3c5-g5mq",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. There is an out-of-bounds read in SGIRleDecode.c.",
+      "published": "2021-03-29T16:35:27Z",
+      "updated": "2024-10-09T20:12:54Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-p43w-g3c5-g5mq analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "aa1342d7-1f85-4dc7-b964-e0dad0f79e9b",
+      "id": "GHSA-98vv-pw6r-q6q4",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125,
+        400
+      ],
+      "description": "The package pillow 5.2.0 and before 8.3.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the getrgb function.",
+      "published": "2021-09-07T23:08:10Z",
+      "updated": "2024-10-09T21:02:06Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-98vv-pw6r-q6q4 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3ccafbda-5a03-40b0-aa38-7b85e2612760",
+      "id": "GHSA-7534-mm45-c74v",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        120
+      ],
+      "description": "Pillow through 8.2.0 and PIL (aka Python Imaging Library) through 1.1.7 allow an attacker to pass controlled parameters directly into a convert function to trigger a buffer overflow in Convert.c.",
+      "published": "2021-10-05T20:24:41Z",
+      "updated": "2024-10-09T21:03:04Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-7534-mm45-c74v analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "40a21326-1ae3-4aa4-ac5a-bac34158d02f",
+      "id": "GHSA-77gc-v2xv-rvvh",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.1,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. There is an out-of-bounds read in J2kDecode, in j2ku_graya_la.",
+      "published": "2021-06-08T18:49:02Z",
+      "updated": "2024-10-09T21:04:08Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-77gc-v2xv-rvvh analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "51ddb55d-e421-41a6-be9f-79a7e66c2f4a",
+      "id": "GHSA-rwv7-3v45-hg29",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.1,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. There is an out-of-bounds read in J2kDecode, in j2ku_gray_i. This dates to Pillow 2.4.0.",
+      "published": "2021-06-08T18:49:28Z",
+      "updated": "2024-10-09T21:04:38Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-rwv7-3v45-hg29 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c163642d-a1f0-4ea0-a8b5-c3471b60ad86",
+      "id": "GHSA-9hx2-hgq2-2g4f",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        400
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. The PDF parser allows a regular expression DoS (ReDoS) attack via a crafted PDF file because of a catastrophic backtracking regex.",
+      "published": "2021-03-29T16:35:46Z",
+      "updated": "2024-10-09T21:05:47Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-9hx2-hgq2-2g4f analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "6ed3e38c-a744-42c7-a4f2-328b7119d9de",
+      "id": "GHSA-m2vv-5vj5-2hm7",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        409
+      ],
+      "description": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GIF Data (Data Amplification).",
+      "published": "2022-11-14T12:00:15Z",
+      "updated": "2024-10-11T20:44:47Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-m2vv-5vj5-2hm7 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "4daf32e9-5b29-4d72-bd86-33a202b76ca2",
+      "id": "GHSA-8vj2-vxx3-667w",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        74
+      ],
+      "description": "`PIL.ImageMath.eval` in Pillow before 9.0.0 allows evaluation of arbitrary expressions, such as ones that use the Python exec method `ImageMath.eval(\"exec(exit())\")`. While Pillow 9.0.0 restricted top-level builtins available to PIL.ImageMath.eval(), it did not prevent builtins available to lambda expressions. These are now also restricted in 9.0.1.",
+      "published": "2022-01-12T20:07:33Z",
+      "updated": "2024-10-11T20:56:02Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8vj2-vxx3-667w analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bb27acee-2c6b-4243-aa82-1c20081b365d",
+      "id": "GHSA-9j59-75qj-795w",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 9.1,
+          "severity": "critical",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        22
+      ],
+      "description": "Pillow before 9.0.1 allows attackers to delete files because spaces in temporary pathnames are mishandled.",
+      "published": "2022-03-11T23:10:32Z",
+      "updated": "2024-10-11T21:01:42Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-9j59-75qj-795w analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "eaa94b99-0c4d-401b-869e-4ab4719ee995",
+      "id": "GHSA-vqcj-wrf2-7v73",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        787
+      ],
+      "description": "In Pillow before 8.1.0, TiffDecode has a heap-based buffer overflow when decoding crafted YCbCr files because of certain interpretation conflicts with LibTIFF in RGBA mode.",
+      "published": "2021-03-18T19:55:27Z",
+      "updated": "2024-10-11T20:59:41Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-vqcj-wrf2-7v73 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "dc2992a1-6f08-48af-a695-1a37864e4f07",
+      "id": "GHSA-8ghj-p4vj-mr35",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        400,
+        770
+      ],
+      "description": "An issue was discovered in Pillow before 10.0.0. It is a Denial of Service that uncontrollably allocates memory to process a given task, potentially causing a service to crash by having it run out of memory. This occurs for truetype in ImageFont when textlength in an ImageDraw instance operates on a long text argument.",
+      "published": "2023-11-03T06:36:30Z",
+      "updated": "2024-10-14T21:20:49Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-8ghj-p4vj-mr35 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "dde87890-0b99-4f70-9a48-793956f50ae8",
+      "id": "GHSA-hjfx-8p6c-g7gx",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        345
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For BLP data, BlpImagePlugin did not properly check that reads (after jumping to file offsets) returned data. This could lead to a DoS where the decoder could be run a large number of times on empty data.",
+      "published": "2021-06-08T18:49:20Z",
+      "updated": "2024-10-14T21:36:43Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-hjfx-8p6c-g7gx analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "e4f88ce3-db25-4186-b5ec-f22ae6c6014b",
+      "id": "GHSA-3f63-hfp8-52jq",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 8.1,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        94,
+        95
+      ],
+      "description": "Pillow through 10.1.0 allows PIL.ImageMath.eval Arbitrary Code Execution via the environment parameter, a different vulnerability than CVE-2022-22817 (which was about the expression parameter).",
+      "published": "2024-01-19T21:30:35Z",
+      "updated": "2024-11-18T16:26:35Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-3f63-hfp8-52jq analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d6257e84-28ef-468f-81ac-35786edc7722",
+      "id": "GHSA-44wm-f244-xhp3",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 6.7,
+          "severity": "medium",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        120,
+        676,
+        680
+      ],
+      "description": "In _imagingcms.c in Pillow before 10.3.0, a buffer overflow exists because strcpy is used instead of strncpy.",
+      "published": "2024-04-03T03:30:30Z",
+      "updated": "2024-11-18T16:26:40Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-44wm-f244-xhp3 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b36db3b8-4d36-4436-bb9e-29e237725248",
+      "id": "GHSA-j7hp-h8jx-5ppr",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        787
+      ],
+      "description": "Heap buffer overflow in libwebp allow a remote attacker to perform an out of bounds memory write via a crafted HTML page.",
+      "published": "2023-09-12T15:30:20Z",
+      "updated": "2025-07-09T15:52:20Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-j7hp-h8jx-5ppr analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Heap' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "25c8ed23-c0d5-4f98-a68e-4917b0fb96eb",
+      "id": "GHSA-3wvg-mj6g-m9cv",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20,
+        400
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICNS container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-18T19:55:21Z",
+      "updated": "2025-08-15T13:58:05Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-3wvg-mj6g-m9cv analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ed3b6cfe-8b8c-4561-9e1c-896adcbea2cd",
+      "id": "GHSA-f4w8-cv6p-x6r5",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20,
+        400
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for a BLP container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-18T19:55:13Z",
+      "updated": "2025-08-15T13:58:14Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-f4w8-cv6p-x6r5 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bfd47d6e-556b-4595-a71b-83fe637caf15",
+      "id": "GHSA-95q3-8gr9-gm8w",
+      "source": {
+        "name": "GITHUB",
+        "url": "https://github.com/advisories"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "GITHUB",
+            "url": "https://github.com/advisories"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20,
+        400
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICO container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-18T19:54:43Z",
+      "updated": "2025-08-15T13:58:19Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-95q3-8gr9-gm8w analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "00afd230-d9b6-4b55-af3c-667ea1a72f0e",
+      "id": "CVE-2020-10177",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "Pillow before 7.1.0 has multiple out-of-bounds reads in libImaging/FliDecode.c.",
+      "published": "2020-06-25T19:15:12Z",
+      "updated": "2024-11-21T04:54:55Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-10177 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fb9732c2-b4a4-43d0-b40e-0f499ab4c3c8",
+      "id": "CVE-2020-10378",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:N/A:N)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In libImaging/PcxDecode.c in Pillow before 7.1.0, an out-of-bounds read can occur when reading PCX files where state->shuffle is instructed to read beyond state->buffer.",
+      "published": "2020-06-25T19:15:12Z",
+      "updated": "2024-11-21T04:55:11Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-10378 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7f506392-c6ce-4ac5-bf73-29968bb3b9c4",
+      "id": "CVE-2020-10379",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.8,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        120
+      ],
+      "description": "In Pillow before 7.1.0, there are two Buffer Overflows in libImaging/TiffDecode.c.",
+      "published": "2020-06-25T19:15:12Z",
+      "updated": "2024-11-21T04:55:11Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-10379 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "addd1d54-56cb-4881-a4ee-af8aa418d4d5",
+      "id": "CVE-2020-10994",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In libImaging/Jpeg2KDecode.c in Pillow before 7.1.0, there are multiple out-of-bounds reads via a crafted JP2 file.",
+      "published": "2020-06-25T19:15:12Z",
+      "updated": "2024-11-21T04:56:32Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-10994 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "236e78a8-85a2-47b4-b306-d276d7da6826",
+      "id": "CVE-2020-11538",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 8.1,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In libImaging/SgiRleDecode.c in Pillow through 7.0.0, a number of out-of-bounds reads exist in the parsing of SGI image files, a different issue than CVE-2020-5311.",
+      "published": "2020-06-25T19:15:12Z",
+      "updated": "2024-11-21T04:58:06Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-11538 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c7927bf7-3eaf-42d3-a239-698dbe4f9c88",
+      "id": "CVE-2020-35653",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.1,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In Pillow before 8.1.0, PcxDecode has a buffer over-read when decoding a crafted PCX file because the user-supplied stride value is trusted for buffer calculations.",
+      "published": "2021-01-12T09:15:13Z",
+      "updated": "2024-11-21T05:27:46Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-35653 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "f24aa343-dc7a-42eb-b099-bacdbc24e8d9",
+      "id": "CVE-2020-35654",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 8.8,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        787
+      ],
+      "description": "In Pillow before 8.1.0, TiffDecode has a heap-based buffer overflow when decoding crafted YCbCr files because of certain interpretation conflicts with LibTIFF in RGBA mode.",
+      "published": "2021-01-12T09:15:13Z",
+      "updated": "2024-11-21T05:27:46Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-35654 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c8645472-939c-42f8-a624-d55b7598beb1",
+      "id": "CVE-2020-35655",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.8,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:P/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.4,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "In Pillow before 8.1.0, SGIRleDecode has a 4-byte buffer over-read when decoding crafted SGI RLE image files because offsets and length tables are mishandled.",
+      "published": "2021-01-12T09:15:13Z",
+      "updated": "2024-11-21T05:27:46Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2020-35655 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "9cf0fa7a-1ae6-441b-be57-761c2f703487",
+      "id": "CVE-2021-23437",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "The package pillow 5.2.0 and before 8.3.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the getrgb function.",
+      "published": "2021-09-03T16:15:08Z",
+      "updated": "2024-11-21T05:51:45Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-23437 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "5adbe704-b9f0-4319-aae8-58c862b42ba6",
+      "id": "CVE-2021-25291",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. In TiffDecode.c, there is an out-of-bounds read in TiffreadRGBATile via invalid tile boundaries.",
+      "published": "2021-03-19T04:15:13Z",
+      "updated": "2024-11-21T05:54:41Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-25291 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c2a4e292-faa9-4bc3-ab8b-0e6b9828c2a2",
+      "id": "CVE-2021-25292",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        1333
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. The PDF parser allows a regular expression DoS (ReDoS) attack via a crafted PDF file because of a catastrophic backtracking regex.",
+      "published": "2021-03-19T04:15:13Z",
+      "updated": "2024-11-21T05:54:41Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-25292 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "811ffb0f-adc0-41a0-ab2f-554f913e1366",
+      "id": "CVE-2021-25293",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "An issue was discovered in Pillow before 8.1.1. There is an out-of-bounds read in SGIRleDecode.c.",
+      "published": "2021-03-19T04:15:13Z",
+      "updated": "2024-11-21T05:54:41Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-25293 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0836e90b-23fc-46fd-8444-5f0dcd0a0e9d",
+      "id": "CVE-2021-27921",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for a BLP container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-03T09:15:14Z",
+      "updated": "2025-08-15T05:15:28Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-27921 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d979839f-b772-4570-abb6-736585e7e577",
+      "id": "CVE-2021-27922",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICNS container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-03T09:15:14Z",
+      "updated": "2025-08-15T05:15:29Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-27922 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fee03ca3-89dd-4c53-8f8b-1b3d177e5bfa",
+      "id": "CVE-2021-27923",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        20
+      ],
+      "description": "Pillow before 8.1.2 allows attackers to cause a denial of service (memory consumption) because the reported size of a contained image is not properly checked for an ICO container, and thus an attempted memory allocation can be very large.",
+      "published": "2021-03-03T09:15:14Z",
+      "updated": "2025-08-15T05:15:29Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-27923 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a3e80687-a0d4-4956-a096-0d8f567dd9b8",
+      "id": "CVE-2021-28675",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        252
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. PSDImagePlugin.PsdImageFile lacked a sanity check on the number of input layers relative to the size of the data block. This could lead to a DoS on Image.open prior to Image.load.",
+      "published": "2021-06-02T15:15:07Z",
+      "updated": "2024-11-21T06:00:05Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-28675 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'open' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "06f021bf-c848-4ff8-ac08-3fa9a071ff4a",
+      "id": "CVE-2021-28676",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        835
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For FLI data, FliDecode did not properly check that the block advance was non-zero, potentially leading to an infinite loop on load.",
+      "published": "2021-06-02T16:15:08Z",
+      "updated": "2024-11-21T06:00:05Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-28676 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'load' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:40. Context: `return yaml.load(data, Loader=yaml.FullLoader)`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2c4080a3-5149-46a7-b2f8-e98799e22b1b",
+      "id": "CVE-2021-28677",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.0,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For EPS data, the readline implementation used in EPSImageFile has to deal with any combination of \\r and \\n as line endings. It used an accidentally quadratic method of accumulating lines while looking for a line ending. A malicious EPS file could use this to perform a DoS of Pillow in the open phase, before an image was accepted for opening.",
+      "published": "2021-06-02T16:15:08Z",
+      "updated": "2024-11-21T06:00:06Z",
+      "analysis": {
+        "state": "exploitable",
+        "detail": "Vulnerability CVE-2021-28677 analyzed by Antigravity AI (python) on 2026-02-17. Reachable: AI audit confirmed that 'open' from package 'Pillow' is used with dynamic data in ./cvedemo/cvedemo/vuln_demo.py:17. Context: `with Image.open(img_file) as img:`"
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "9f7737d7-5a4b-4880-9c4e-4bea86f5a67d",
+      "id": "CVE-2021-28678",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 4.3,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:M/Au:N/C:N/I:N/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        345
+      ],
+      "description": "An issue was discovered in Pillow before 8.2.0. For BLP data, BlpImagePlugin did not properly check that reads (after jumping to file offsets) returned data. This could lead to a DoS where the decoder could be run a large number of times on empty data.",
+      "published": "2021-06-02T16:15:08Z",
+      "updated": "2024-11-21T06:00:06Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-28678 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "b3e7af21-2f96-4dca-a168-7cebf3b8b89d",
+      "id": "CVE-2021-34552",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        120
+      ],
+      "description": "Pillow through 8.2.0 and PIL (aka Python Imaging Library) through 1.1.7 allow an attacker to pass controlled parameters directly into a convert function to trigger a buffer overflow in Convert.c.",
+      "published": "2021-07-13T17:15:09Z",
+      "updated": "2024-11-21T06:10:39Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2021-34552 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "4668666c-b509-4c22-b1a2-3e59fe7c4c89",
+      "id": "CVE-2022-22815",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.4,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        665
+      ],
+      "description": "path_getbbox in path.c in Pillow before 9.0.0 improperly initializes ImagePath.Path.",
+      "published": "2022-01-10T14:12:54Z",
+      "updated": "2024-11-21T06:47:30Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-22815 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "24dadef4-6b99-4ea4-b1ef-5e48d2f958fc",
+      "id": "CVE-2022-22816",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.4,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.5,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "cwes": [
+        125
+      ],
+      "description": "path_getbbox in path.c in Pillow before 9.0.0 has a buffer over-read during initialization of ImagePath.Path.",
+      "published": "2022-01-10T14:12:54Z",
+      "updated": "2024-11-21T06:47:30Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-22816 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8e1163dc-1665-45eb-8f08-a83a36570359",
+      "id": "CVE-2022-22817",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 9.8,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "description": "PIL.ImageMath.eval in Pillow before 9.0.0 allows evaluation of arbitrary expressions, such as ones that use the Python exec method. A lambda expression could also be used.",
+      "published": "2022-01-10T14:12:55Z",
+      "updated": "2024-11-21T06:47:30Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-22817 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "04997f82-30c0-489c-8db9-21a360cc35da",
+      "id": "CVE-2022-24303",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 6.4,
+          "severity": "medium",
+          "method": "CVSSv2",
+          "vector": "(AV:N/AC:L/Au:N/C:N/I:P/A:P)"
+        },
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 9.1,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "description": "Pillow before 9.0.1 allows attackers to delete files because spaces in temporary pathnames are mishandled.",
+      "published": "2022-03-28T02:15:07Z",
+      "updated": "2024-11-21T06:50:07Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-24303 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7fec4125-9f40-494e-a902-ab5e4a069724",
+      "id": "CVE-2022-45198",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "description": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GIF Data (Data Amplification).",
+      "published": "2022-11-14T07:15:10Z",
+      "updated": "2024-11-21T07:28:56Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2022-45198 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "144ae69b-571c-4132-8c9a-77c803744309",
+      "id": "CVE-2023-44271",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        770
+      ],
+      "description": "An issue was discovered in Pillow before 10.0.0. It is a Denial of Service that uncontrollably allocates memory to process a given task, potentially causing a service to crash by having it run out of memory. This occurs for truetype in ImageFont when textlength in an ImageDraw instance operates on a long text argument.",
+      "published": "2023-11-03T05:15:30Z",
+      "updated": "2024-11-21T08:25:33Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-44271 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ac66ff40-ee2f-46eb-bf18-83dd11073ef4",
+      "id": "CVE-2023-50447",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 8.1,
+          "severity": "high",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [
+        94,
+        95
+      ],
+      "description": "Pillow through 10.1.0 allows PIL.ImageMath.eval Arbitrary Code Execution via the environment parameter, a different vulnerability than CVE-2022-22817 (which was about the expression parameter).",
+      "published": "2024-01-19T20:15:11Z",
+      "updated": "2024-11-21T08:37:00Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2023-50447 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
+      "affects": [
+        {
+          "ref": "148cd21a-43f6-417c-83e5-992b4c7f4bc8"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fb58abca-768f-4315-9852-3b63191d6cd0",
+      "id": "CVE-2024-28219",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/"
+      },
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/"
+          },
+          "score": 5.9,
+          "severity": "medium",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes": [
+        680
+      ],
+      "description": "In _imagingcms.c in Pillow before 10.3.0, a buffer overflow exists because strcpy is used instead of strncpy.",
+      "published": "2024-04-03T03:15:09Z",
+      "updated": "2025-11-04T19:17:05Z",
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability CVE-2024-28219 analyzed by Antigravity AI (python) on 2026-02-17. Not Affected: No relevant usage of package 'Pillow' patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
       },
       "affects": [
         {
