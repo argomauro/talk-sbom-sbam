@@ -1,3 +1,13 @@
+# Log degli Errori di Analisi — Motore Euristico (v1.0)
+
+> Questi casi documentano i falsi positivi prodotti dalla versione 1.0 del motore,
+> che simulava l'analisi AI tramite regex e keyword hardcoded invece di usare un
+> LLM reale. Sono stati la motivazione principale per il passaggio ad AWS Bedrock
+> (v2.0) e poi all'architettura completamente automatizzata con `vex-engine` (v3.0).
+> Il motore attuale non presenta questi errori di contesto.
+
+---
+
 ALIAS:GHSA-9wx4-h78v-vm56
 Descritption: Requests is a HTTP library. Prior to 2.32.0, when making requests through a Requests `Session`, if the first request is made with `verify=False` to disable cert verification, all subsequent requests to the same host will continue to ignore cert verification regardless of changes to the value of `verify`. This behavior will continue for the lifecycle of the connection in the connection pool. This vulnerability is fixed in 2.32.0.
 

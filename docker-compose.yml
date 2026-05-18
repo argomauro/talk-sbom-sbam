@@ -13,9 +13,9 @@ services:
       - "443:443"
       - "2222:22"
     volumes:
-      - './gitlab/config:/etc/gitlab'
-      - './gitlab/logs:/var/log/gitlab'
-      - './gitlab/data:/var/opt/gitlab'
+      - './volumes/gitlab/config:/etc/gitlab'
+      - './volumes/gitlab/logs:/var/log/gitlab'
+      - './volumes/gitlab/data:/var/opt/gitlab'
     shm_size: '256m'
     networks:
       default:
@@ -29,8 +29,10 @@ services:
     depends_on:
       - gitlab
     volumes:
-      - './runner/config:/etc/gitlab-runner'
-      - '/var/run/docker.sock:/var/run/docker.sock' # Permette al runner di lanciare container (Docker-in-Docker)
+      - './volumes/runner/config:/etc/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    networks:
+      - default
 
   # --- DEPENDENCY-TRACK API SERVER ---
   dtrack-api:
@@ -41,7 +43,9 @@ services:
     environment:
       - ALPINE_DATABASE_MODE=embedded
     volumes:
-      - './dtrack:/data'
+      - './volumes/dtrack:/data'
+    networks:
+      - default
 
   # --- DEPENDENCY-TRACK FRONTEND ---
   dtrack-ui:
@@ -52,7 +56,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - API_BASE_URL=http://localhost:8081 # Cambia localhost con l'IP del PC se accedi da rete esterna
+      - API_BASE_URL=http://localhost:8081
+    networks:
+      - default
 
 networks:
   default:
@@ -60,4 +66,3 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/24
-

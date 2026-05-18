@@ -139,36 +139,58 @@ PyYAML==3.12
 
 ---
 
-## 🤖 5. Il Motore di Automazione (CI/CD Consolidato)
+## 🤖 5. Il Motore di Automazione (Pipeline a 3 Stage)
 
-In ogni repository, il file `.gitlab-ci.yml` gestisce l'intero ciclo di vita della sicurezza in due stage atomici:
+Il file `.gitlab-ci.yml` di ogni progetto applicativo include il template condiviso
+da `root/vex-engine` e definisce tre stage in sequenza:
 
-1. **Scan Stage**: Genera lo SBOM (CycloneDX) usando Trivy.
-2. **Sync Stage**: 
-   - Carica lo SBOM su Dependency-Track.
-   - Carica il VEX arricchito (se modificato dallo sviluppatore/IA).
-   - Scarica e sincronizza la baseline VEX dal server se non ci sono modifiche locali.
+1. **Scan Stage** — Trivy scansiona il repository e genera `bom.json` (SBOM CycloneDX).
+2. **Analyze Stage** — Il cuore del sistema (eseguito dal motore `vex-engine`):
+   - Scarica il VEX baseline da Dependency-Track.
+   - Per ogni CVE CRITICAL/HIGH non ancora analizzata chiama **AWS Bedrock (Claude)**
+     in 3 fasi: Strategist → Scanner locale → Auditor.
+   - Aggiorna `vex.json` con verdetti, confidence score e reasoning in linguaggio naturale.
+   - Apre una **Issue GitLab** automatica per ogni CVE confermata `affected` (idempotente).
+   - Committa e pusha il `vex.json` arricchito con `[skip ci]`.
+3. **Sync Stage** — Carica SBOM e VEX arricchito su Dependency-Track, riducendo il
+   rumore della dashboard eliminando i `not_affected`.
 
-Questo garantisce che il repository git sia sempre la "Single Source of Truth" per lo stato di sicurezza del progetto.
+Lo sviluppatore non deve eseguire nessuno script manualmente: fa solo `git push`.
 
-## 🧠 6. AI-Native VEX Triage (Antigravity Analyst)
+## 🧠 6. Bedrock VEX Analysis Engine
 
-L'integrazione con **Antigravity** è ora **AI-Native**, eliminando la necessità di configurazioni manuali o pattern hardcoded:
+Il triage delle vulnerabilità è completamente automatizzato tramite **AWS Bedrock (Claude)**,
+senza dipendere da IDE o azioni manuali dello sviluppatore:
 
-- **AI-Native Reachability Analyst**: Un agente intelligente che interpreta dinamicamente le descrizioni delle CVE per identificare pattern pericolosi e scansionare il codice sorgente.
-- **Analisi Semantica Avanzata**: Il sistema distingue tra definizioni di funzioni, invocazioni effettive e codice commentato, riducendo drasticamente i falsi positivi.
-- **Selective Triage Modes**: Supporto per modalità `full` (scansione totale) e `critical` (focus prioritario su rischi elevati) per ottimizzare i tempi di sviluppo.
-- **VEX-as-Code**: Triage arricchito memorizzato direttamente nel repository in formato CycloneDX, sincronizzato automaticamente con Dependency-Track.
-- **Zero-Configuration Scalability**: Funziona su qualsiasi nuovo CVE senza dover aggiornare gli script di analisi, rendendo il triage scalabile all'infinito.
+- **Progetto condiviso `vex-engine`**: gli script di analisi (`generate_vex.py`,
+  `llm_analyzer.py`) risiedono in un unico progetto GitLab e vengono inclusi da
+  tutti i progetti applicativi via `include:` nel CI. Un aggiornamento al motore
+  si propaga automaticamente a tutti i progetti.
+- **Phase 1 — Strategist (Bedrock)**: Claude interpreta la descrizione della CVE
+  e genera i pattern di ricerca specifici — zero configurazione manuale per nuove CVE.
+- **Phase 2 — Scanner (locale)**: regex sul codice sorgente, nessun costo API,
+  produce code snippet con ±30 righe di contesto.
+- **Phase 3 — Auditor (Bedrock)**: Claude analizza il data flow nei snippet e
+  produce un verdetto (`affected` / `not_affected`) con confidence score (0-100%)
+  e reasoning tecnico dettagliato.
+- **Delta Analysis**: le CVE già analizzate vengono saltate — solo le nuove
+  vengono mandate a Bedrock, con costo per pipeline inferiore a $0.01.
+- **VEX-as-Code**: il `vex.json` con i verdetti AI è versionato nel repository,
+  costituendo l'audit trail immutabile delle decisioni di sicurezza.
 
 ---
 
 ## 🎤 7. Demo Script (Cosa mostrare)
 
-1. **Push del Codice:** Fai un commit con una libreria vecchia.
-2. **Pipeline Consolidata:** Mostra lo stage `sync` che carica SBOM e gestisce il VEX.
-3. **AI-Native Triage**: Apri l'IDE, lancia lo script di arricchimento e mostra come l'IA "legge" la CVE di PyYAML, scansiona il codice, rileva che `unsafe_processor()` è commentato e aggiorna il `vex.json` con precisione millimetrica.
-4. **Final Sync:** Pusha il VEX arricchito e mostra su Dependency-Track come le vulnerabilità passano a "Not Affected".
+1. **Push del Codice**: fai un commit con una libreria vecchia (`PyYAML 3.12`, `log4j 2.14.1`).
+2. **Pipeline a 3 stage**: mostra i tre stage in GitLab CI — scan → analyze → sync.
+3. **Stage Analyze in dettaglio**: apri il log del job `vex_ai_analysis` e mostra
+   le 3 fasi per una CVE (Strategist genera i pattern, Scanner trova il codice,
+   Auditor decide se è exploitabile con reasoning).
+4. **Issue automatica**: mostra la Issue di sicurezza creata automaticamente con
+   il reasoning dell'AI, il file:riga come evidence e la label `cve:CVE-XXXX-XXXX`.
+5. **Dependency-Track aggiornato**: mostra come le CVE `not_affected` spariscono
+   dalla dashboard dopo l'upload del VEX arricchito.
 
 
 ---

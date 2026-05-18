@@ -1,8 +1,17 @@
+include:
+  - project: 'demo-security/vex-engine'
+    file: 'ci-template.yml'
+    ref: main
+
 stages:
   - scan
-  - sync
+  - upload-bom
+  - analyze
+  - sync-vex
 
-# 1. Generazione dello SBOM
+# ─────────────────────────────────────────────────────────────────────────────
+# STAGE 1 — SCAN: Trivy genera il BOM
+# ─────────────────────────────────────────────────────────────────────────────
 generate_sbom:
   stage: scan
   image:
@@ -14,83 +23,76 @@ generate_sbom:
     paths:
       - bom.json
 
-# 2. Sincronizzazione Consolidata (SBOM + VEX)
-dtrack_sync:
-  stage: sync
+# ─────────────────────────────────────────────────────────────────────────────
+# STAGE 2 — UPLOAD BOM: carica su DTrack e attende elaborazione + VEX
+# ─────────────────────────────────────────────────────────────────────────────
+upload_bom:
+  stage: upload-bom
   image: alpine:latest
+  needs: ["generate_sbom"]
   before_script:
-    - apk add --no-cache curl git sed
+    - apk add --no-cache curl sed
   script:
     - |
       set -e
       DT_URL="http://host.docker.internal:8081"
 
-      echo "--- 1. Caricamento SBOM ---"
+      echo "━━━ [1/2] Caricamento BOM su Dependency-Track ━━━"
       UPLOAD_TOKEN=$(curl -f -s -X "POST" "$DT_URL/api/v1/bom" \
-           -H 'Content-Type: multipart/form-data' \
-           -H "X-Api-Key: $DT_API_KEY" \
-           -F "projectName=$CI_PROJECT_NAME" \
-           -F "projectVersion=$CI_COMMIT_BRANCH" \
-           -F "autoCreate=true" \
-           -F "bom=@bom.json" | sed -E 's/.*"token":"([^"]+)".*/\1/')
+        -H 'Content-Type: multipart/form-data' \
+        -H "X-Api-Key: $DT_API_KEY" \
+        -F "projectName=$CI_PROJECT_NAME" \
+        -F "projectVersion=$CI_COMMIT_BRANCH" \
+        -F "autoCreate=true" \
+        -F "bom=@bom.json" | sed -E 's/.*"token":"([^"]+)".*/\1/')
 
-      echo "Upload completato (Token: $UPLOAD_TOKEN). In attesa dell'analisi..."
-      # Polling per attendere la fine dell'elaborazione
+      [ -z "$UPLOAD_TOKEN" ] && echo "ERRORE: token upload non ricevuto." && exit 1
+      echo "Upload token: $UPLOAD_TOKEN"
+
+      echo "━━━ [2/2] Attesa elaborazione BOM ━━━"
       for i in $(seq 1 30); do
-        PROCESSING=$(curl -f -s -X "GET" "$DT_URL/api/v1/bom/token/$UPLOAD_TOKEN" \
-             -H "X-Api-Key: $DT_API_KEY" | grep -o '"processing":true' || true)
+        PROCESSING=$(curl -f -s "$DT_URL/api/v1/bom/token/$UPLOAD_TOKEN" \
+          -H "X-Api-Key: $DT_API_KEY" | grep -o '"processing":true' || true)
         if [ -z "$PROCESSING" ]; then
-          echo "Analisi completata con successo."
+          echo "BOM elaborato ($i/30)."
           break
         fi
-        echo "Ancora in elaborazione... ($i/30)"
-        sleep 5
+        echo "In elaborazione... ($i/30)" && sleep 5
       done
+  artifacts:
+    paths:
+      - bom.json
 
-      echo "--- 2. Recupero UUID Progetto ---"
-      PROJECT_UUID=$(curl -f -s -G "$DT_URL/api/v1/project" \
-           -H "X-Api-Key: $DT_API_KEY" \
-           --data-urlencode "name=$CI_PROJECT_NAME" \
-           --data-urlencode "version=$CI_COMMIT_BRANCH" | sed -E 's/.*"uuid":"([^"]+)".*/\1/')
+# ─────────────────────────────────────────────────────────────────────────────
+# STAGE 3 — ANALYZE: iniettato da vex-engine/ci-template.yml
+# ─────────────────────────────────────────────────────────────────────────────
 
-      if [ -z "$PROJECT_UUID" ]; then
-        echo "ERRORE: Impossibile trovare l'UUID del progetto."
-        exit 1
-      fi
-      echo "Project UUID: $PROJECT_UUID"
+# ─────────────────────────────────────────────────────────────────────────────
+# STAGE 4 — SYNC VEX: carica il VEX arricchito su Dependency-Track
+# ─────────────────────────────────────────────────────────────────────────────
+sync_vex:
+  stage: sync-vex
+  image: alpine:latest
+  needs: ["vex_ai_analysis"]
+  before_script:
+    - apk add --no-cache curl
+  script:
+    - |
+      set -e
+      DT_URL="http://host.docker.internal:8081"
 
-      echo "--- 3. Analisi VEX (Enrichment vs Baseline) ---"
-      # Verifica se il file vex.json è stato modificato in questo push (arricchimento manuale/AI)
-      VEX_MODIFIED=$(git diff --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA | grep vex.json || true)
+      [ ! -f vex.json ] && echo "vex.json non trovato — skip." && exit 0
 
-      if [ -n "$VEX_MODIFIED" ]; then
-        echo "Rilevato arricchimento in vex.json. Invio del VEX arricchito a Dependency-Track..."
-        curl -f -X "POST" "$DT_URL/api/v1/vex" \
-             -H 'Content-Type: multipart/form-data' \
-             -H "X-Api-Key: $DT_API_KEY" \
-             -F "projectName=$CI_PROJECT_NAME" \
-             -F "projectVersion=$CI_COMMIT_BRANCH" \
-             -F "vex=@vex.json"
-      else
-        echo "Nessun arricchimento locale. Sincronizzazione baseline da Dependency-Track..."
-        curl -f -s -X "GET" "$DT_URL/api/v1/vex/cyclonedx/project/$PROJECT_UUID" \
-             -H "X-Api-Key: $DT_API_KEY" \
-             -H "Accept: application/vnd.cyclonedx+json" \
-             -o vex_latest.json
-
-        if [ ! -f vex.json ] || [ "$(diff -q vex.json vex_latest.json || true)" != "" ]; then
-          echo "Aggiornamento vex.json con la baseline del server..."
-          mv vex_latest.json vex.json
-          git config --global user.email "ci-bot@example.com"
-          git config --global user.name "VEX CI Bot"
-          git remote set-url origin "http://oauth2:${CI_GIT_TOKEN}@host.docker.internal/${CI_PROJECT_PATH}.git"
-          git add vex.json
-          git commit -m "chore: auto-update VEX baseline [skip ci]"
-          git push origin HEAD:$CI_COMMIT_BRANCH
-        else
-          echo "Il file vex.json è già allineato alla baseline."
-        fi
-      fi
+      echo "━━━ Caricamento VEX arricchito su Dependency-Track ━━━"
+      RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X "POST" "$DT_URL/api/v1/vex" \
+        -H 'Content-Type: multipart/form-data' \
+        -H "X-Api-Key: $DT_API_KEY" \
+        -F "projectName=$CI_PROJECT_NAME" \
+        -F "projectVersion=$CI_COMMIT_BRANCH" \
+        -F "vex=@vex.json")
+      echo "$RESPONSE"
+      HTTP_CODE=$(echo "$RESPONSE" | grep "HTTP_CODE:" | cut -d: -f2)
+      [ "$HTTP_CODE" = "200" ] && echo "VEX caricato." || (echo "ERRORE DTrack: HTTP $HTTP_CODE" && exit 1)
   artifacts:
     paths:
       - vex.json
