@@ -1,26 +1,26 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:914e5125-18ad-4ac4-a764-dbbc395925b1",
+  "serialNumber": "urn:uuid:28d12430-ab63-4cac-a259-4870feaf90d3",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-05-18T16:16:15Z",
-    "tools": {
-      "components": [
-        {
-          "type": "application",
-          "vendor": "OWASP",
-          "name": "Dependency-Track",
-          "version": "4.13.6"
-        },
-        {
-          "type": "application",
-          "name": "Antigravity VEX Analyst \u2014 Bedrock Edition",
-          "version": "3.0.0",
-          "description": "Model: eu.amazon.nova-2-lite-v1:0"
-        }
-      ]
-    },
+    "timestamp": "2026-05-18T19:59:52Z",
+    "tools": [
+      {
+        "vendor": "OWASP",
+        "name": "Dependency-Track",
+        "version": "4.13.6",
+        "hashes": [],
+        "externalReferences": []
+      },
+      {
+        "vendor": "LLM Analyzer",
+        "name": "VEX Engine",
+        "version": "3.0.0",
+        "hashes": [],
+        "externalReferences": []
+      }
+    ],
     "component": {
       "type": "application",
       "bom-ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0",
@@ -56,11 +56,17 @@
       "updated": "2023-01-09T05:04:45Z",
       "analysis": {
         "state": "exploitable",
-        "detail": "Vulnerability GHSA-jgpv-4h4c-xhw3 analyzed by Antigravity AI (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable function `Image.open` from the Pillow library is called with attacker-controlled input (`request.FILES['avatar']`). Since the application allows file uploads and processes them using Pillow's image loading functions, an attacker can craft a malicious BLP image to trigger the denial-of-service vulnerability. The code lacks any input validation or size checks before opening the image, making it exploitable. | Evidence: ./cvedemo/cvedemo/vuln_demo.py:17"
+        "detail": "Vulnerability GHSA-jgpv-4h4c-xhw3 analyzed by LLM Analyzer (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable function `Image.open` from the Pillow library is called with attacker-controlled input (`request.FILES['avatar']`). Since the application allows file uploads and processes them using Pillow's image loading functions, an attacker can craft a malicious BLP image to trigger the denial-of-service vulnerability. The code lacks any input validation or size checks before opening the image, making it exploitable. | Evidence: ./cvedemo/cvedemo/vuln_demo.py:17"
       },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "gitlab:issue-url",
+          "value": "http://localhost/demo-security/app-python/-/issues/1"
         }
       ]
     },
@@ -87,7 +93,14 @@
       "description": "JpegImagePlugin may append an EOF marker to the end of a truncated file, so that the last segment of the data will still be processed by the decoder. If the EOF marker is not detected as such however, this could lead to an infinite loop where JpegImagePlugin keeps trying to end the file.",
       "published": "2022-03-11T23:39:27Z",
       "updated": "2023-01-11T05:05:44Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-4fx9-vc88-q2xc analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'JpegImagePlugin' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -119,7 +132,14 @@
       "description": "Storage.save in Django 2.2 before 2.2.26, 3.2 before 3.2.11, and 4.0 before 4.0.1 allows directory traversal if crafted filenames are directly passed to it.",
       "published": "2022-01-12T19:21:04Z",
       "updated": "2024-09-20T12:19:35Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-jrh2-hc4r-7jwx analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -153,7 +173,7 @@
       "updated": "2024-09-20T12:22:53Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8c5j-9r9f-c6w8 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -192,7 +212,7 @@
       "updated": "2024-09-20T15:09:14Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-w24h-v9qh-8gxj analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -231,7 +251,7 @@
       "updated": "2024-09-20T15:09:55Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-2gwj-7jmv-h26r analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -269,7 +289,14 @@
       "description": "In Django 2.2 before 2.2.22, 3.1 before 3.1.10, and 3.2 before 3.2.2 (with Python 3.9.5+), URLValidator does not prohibit newlines and tabs (unless the URLField form field is used). If an application uses values with newlines in an HTTP response, header injection can occur. Django itself is unaffected because HttpResponse prohibits newlines in HTTP headers.",
       "published": "2021-06-09T17:14:51Z",
       "updated": "2024-09-20T15:28:26Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-qm57-vhq3-3fwf analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -304,7 +331,7 @@
       "updated": "2024-09-20T15:30:30Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-rxjp-mfm9-w4wr analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -341,7 +368,14 @@
       "description": "Django before 2.2.24, 3.x before 3.1.12, and 3.2.x before 3.2.4 has a potential directory traversal via django.contrib.admindocs. Staff members could use the TemplateDetailView view to check the existence of arbitrary files. Additionally, if (and only if) the default admindocs templates have been customized by application developers to also show file contents, then not only the existence but also the file contents would have been exposed. In other words, there is directory traversal outside of the template root directories.",
       "published": "2021-06-10T17:21:00Z",
       "updated": "2024-09-20T15:32:27Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-68w8-qjq3-2gfm analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -375,7 +409,7 @@
       "updated": "2024-09-20T15:34:08Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-6cw3-g6wv-c2xv analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -412,7 +446,14 @@
       "description": "The `{% debug %}` template tag in Django 2.2 before 2.2.27, 3.2 before 3.2.12, and 4.0 before 4.0.2 does not properly encode the current context. This may lead to XSS.",
       "published": "2022-02-04T00:00:33Z",
       "updated": "2024-09-20T15:35:37Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-95rw-fx8r-36v6 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -444,7 +485,14 @@
       "description": "In Django 2.2 before 2.2.18, 3.0 before 3.0.12, and 3.1 before 3.1.6, the django.utils.archive.extract method (used by \"startapp --template\" and \"startproject --template\") allows directory traversal via an archive with absolute paths or relative paths with dot segments.",
       "published": "2021-03-18T20:29:49Z",
       "updated": "2024-09-20T15:36:34Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-fvgf-6h6h-3322 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -477,7 +525,14 @@
       "description": "An issue was discovered in Django v5.1.1, v5.0.9, and v4.2.16. The django.contrib.auth.forms.PasswordResetForm class, when used in a view implementing password reset flows, allows remote attackers to enumerate user e-mail addresses by sending password reset requests and observing the outcome (only when e-mail sending is consistently failing).",
       "published": "2024-10-08T18:33:13Z",
       "updated": "2024-10-30T19:02:44Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-rrqc-c2jx-6jgv analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -509,7 +564,14 @@
       "description": "Pillow is the friendly PIL (Python Imaging Library) fork. `path_getbbox` in `path.c` in Pillow before 9.0.0 improperly initializes `ImagePath.Path`.",
       "published": "2022-01-12T20:07:43Z",
       "updated": "2024-10-11T21:09:06Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-pw3c-h7wp-cvhx analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -541,7 +603,14 @@
       "description": "path_getbbox in path.c in Pillow before 9.0.0 has a buffer over-read during initialization of ImagePath.Path.",
       "published": "2022-01-12T20:07:41Z",
       "updated": "2024-10-11T21:27:30Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-xrcv-f9gm-v42c analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -573,7 +642,14 @@
       "description": "In Pillow before 8.1.0, SGIRleDecode has a 4-byte buffer over-read when decoding crafted SGI RLE image files because offsets and length tables are mishandled.",
       "published": "2021-03-18T19:55:34Z",
       "updated": "2024-10-08T13:05:15Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-hf64-x4gq-p99h analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -607,11 +683,17 @@
       "updated": "2024-10-08T13:05:46Z",
       "analysis": {
         "state": "exploitable",
-        "detail": "Vulnerability GHSA-f5g8-5qq7-938w analyzed by Antigravity AI (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable Pillow code path is triggered by opening user-uploaded image files via Image.open(). Attackers can upload a malicious PCX file with an oversized stride value, which will be processed by the vulnerable PcxDecode logic in Pillow versions before 8.1.0. The code explicitly uses Image.open() on request.FILES['avatar'] making it directly reachable via HTTP POST file upload. | Evidence: cvedemo/cvedemo/vuln_demo.py:40"
+        "detail": "Vulnerability GHSA-f5g8-5qq7-938w analyzed by LLM Analyzer (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable Pillow code path is triggered by opening user-uploaded image files via Image.open(). Attackers can upload a malicious PCX file with an oversized stride value, which will be processed by the vulnerable PcxDecode logic in Pillow versions before 8.1.0, leading to a buffer over-read. The code explicitly uses Image.open() on request.FILES['avatar'] making it directly exploitable via a file upload attack. | Evidence: cvedemo/cvedemo/vuln_demo.py:40"
       },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "gitlab:issue-url",
+          "value": "http://localhost/demo-security/app-python/-/issues/2"
         }
       ]
     },
@@ -642,7 +724,7 @@
       "updated": "2024-10-08T13:11:34Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-57h3-9rgr-c24m analyzed by Antigravity AI (python) on 2026-05-18. Not Affected (confidence: 95%): The vulnerable Pillow function is not called in the provided code. The code demonstrates a generic file upload handling using `Image.open()` and `img.verify()`, but it does not trigger the specific YCbCr TIFF decoding path that causes the CVE-2020-35654 buffer overflow. Additionally, the code does not process the uploaded file in RGBA mode or decode TIFF files, which are required conditions for exploitation.",
+        "detail": "Vulnerability GHSA-57h3-9rgr-c24m analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected (confidence: 95%): The vulnerable Pillow TIFF decoding path is not triggered in this code. The code only processes uploaded images generically using Image.open() followed by img.verify() and thumbnail resizing, but there is no evidence of TIFF file handling or YCbCr mode activation. The CVE-specific attack vector (crafted YCbCr TIFF in RGBA mode) cannot be reached because the code does not enforce or check image format or color mode before processing. Additionally, the Pillow version is not specified as pre-8.1.1, and the code does not demonstrate any conditions that would force the use of the vulnerable TIFF decoder path.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -681,7 +763,7 @@
       "updated": "2024-10-08T13:11:58Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8xjq-8fcg-g5hw analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8xjq-8fcg-g5hw analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -720,7 +802,7 @@
       "updated": "2024-10-09T19:44:22Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8843-m7mw-mxqm analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8843-m7mw-mxqm analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -757,7 +839,14 @@
       "description": "In `libImaging/Jpeg2KDecode.c` in Pillow before 7.1.0, there are multiple out-of-bounds reads via a crafted JP2 file.",
       "published": "2020-07-27T21:52:39Z",
       "updated": "2024-10-09T19:45:02Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-vj42-xq3r-hr3r analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -791,7 +880,7 @@
       "updated": "2024-10-09T19:45:41Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-43fq-w8qq-v88h analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-43fq-w8qq-v88h analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -828,7 +917,14 @@
       "description": "Pillow before 7.1.0 has multiple out-of-bounds reads in `libImaging/FliDecode.c`.",
       "published": "2020-07-27T21:52:43Z",
       "updated": "2024-10-09T20:50:09Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-cqhg-xjhh-p8hf analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -860,7 +956,14 @@
       "description": "In `libImaging/PcxDecode.c` in Pillow before 7.1.0, an out-of-bounds read can occur when reading PCX files where `state->shuffle` is instructed to read beyond `state->buffer`.",
       "published": "2021-11-03T18:04:53Z",
       "updated": "2024-10-09T20:52:59Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-3xv8-3j54-hgrp analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -893,7 +996,14 @@
       "description": "An issue was discovered in Pillow before 8.2.0. `PSDImagePlugin.PsdImageFile` lacked a sanity check on the number of input layers relative to the size of the data block. This could lead to a DoS on `Image.open` prior to `Image.load`.",
       "published": "2021-06-08T18:49:11Z",
       "updated": "2024-10-09T20:06:43Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-g6rj-rv7j-xwp4 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -927,7 +1037,7 @@
       "updated": "2024-10-09T21:06:28Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-mvg9-xffr-p774 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-mvg9-xffr-p774 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -966,7 +1076,7 @@
       "updated": "2024-10-11T20:41:38Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-7r7m-5h27-29hp analyzed by Antigravity AI (python) on 2026-05-18. Not Affected (confidence: 95%): The vulnerable FliDecode function from Pillow is not actually invoked in this codebase. The code demonstrates a generic file upload handling using Image.open() and img.verify(), but there is no evidence that FLI format processing or the specific FliDecode logic is triggered. Additionally, the code contains unrelated PyYAML examples (safe vs unsafe loading) that are commented out or not executed during the Pillow demonstration path.",
+        "detail": "Vulnerability GHSA-7r7m-5h27-29hp analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected (confidence: 95%): The vulnerable FliDecode function from Pillow is not actually invoked in this codebase. The code demonstrates a generic file upload handling using Image.open() and img.verify(), but there is no evidence that FLI format processing or the specific FliDecode logic is triggered. Additionally, the code contains unrelated PyYAML examples (safe vs unsafe loading) that are commented out or not executed during the Pillow demonstration path.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1005,7 +1115,7 @@
       "updated": "2024-10-14T21:38:38Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-q5hq-fp76-qmrc analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-q5hq-fp76-qmrc analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1044,7 +1154,7 @@
       "updated": "2024-10-09T20:12:54Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-p43w-g3c5-g5mq analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-p43w-g3c5-g5mq analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1084,7 +1194,7 @@
       "updated": "2024-10-09T21:02:06Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-98vv-pw6r-q6q4 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-98vv-pw6r-q6q4 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1123,7 +1233,7 @@
       "updated": "2024-10-09T21:03:04Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-7534-mm45-c74v analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-7534-mm45-c74v analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1162,7 +1272,7 @@
       "updated": "2024-10-09T21:04:08Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-77gc-v2xv-rvvh analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-77gc-v2xv-rvvh analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1201,7 +1311,7 @@
       "updated": "2024-10-09T21:04:38Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-rwv7-3v45-hg29 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-rwv7-3v45-hg29 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1238,7 +1348,14 @@
       "description": "An issue was discovered in Pillow before 8.1.1. The PDF parser allows a regular expression DoS (ReDoS) attack via a crafted PDF file because of a catastrophic backtracking regex.",
       "published": "2021-03-29T16:35:46Z",
       "updated": "2024-10-09T21:05:47Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-9hx2-hgq2-2g4f analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1272,7 +1389,7 @@
       "updated": "2024-10-11T20:44:47Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-m2vv-5vj5-2hm7 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-m2vv-5vj5-2hm7 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1311,7 +1428,7 @@
       "updated": "2024-10-11T20:56:02Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8vj2-vxx3-667w analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8vj2-vxx3-667w analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1350,7 +1467,7 @@
       "updated": "2024-10-11T21:01:42Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-9j59-75qj-795w analyzed by Antigravity AI (python) on 2026-05-18. Not Affected (confidence: 95%): The Pillow image processing code does not exhibit the specific filename handling vulnerability described in CVE GHSA-9j59-75qj-795w. The code saves processed images using the original filename (img_file.name) without any path manipulation or unsafe temporary file handling. There is no evidence of path concatenation vulnerabilities or unsafe temporary file operations that would allow arbitrary file deletion via filenames with spaces.",
+        "detail": "Vulnerability GHSA-9j59-75qj-795w analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected (confidence: 95%): The Pillow image processing code does not exhibit the specific filename handling vulnerability described in CVE GHSA-9j59-75qj-795w. The code saves processed images using the original filename (img_file.name) without any path manipulation that would allow temporary pathname deletion. While spaces in filenames are permitted, the code lacks the insecure temporary file handling patterns that would enable arbitrary file deletion. The primary risk vector in this code remains the general safety of image processing rather than path traversal or tempfile misuse.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1389,7 +1506,7 @@
       "updated": "2024-10-11T20:59:41Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-vqcj-wrf2-7v73 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-vqcj-wrf2-7v73 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1429,7 +1546,7 @@
       "updated": "2024-10-14T21:20:49Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8ghj-p4vj-mr35 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8ghj-p4vj-mr35 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1466,7 +1583,14 @@
       "description": "An issue was discovered in Pillow before 8.2.0. For BLP data, BlpImagePlugin did not properly check that reads (after jumping to file offsets) returned data. This could lead to a DoS where the decoder could be run a large number of times on empty data.",
       "published": "2021-06-08T18:49:20Z",
       "updated": "2024-10-14T21:36:43Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-hjfx-8p6c-g7gx analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1500,7 +1624,7 @@
       "updated": "2024-10-25T21:31:46Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected (confidence: 92%): The vulnerable function `unsafe_processor` is present but not called in the main execution flow. The active code path uses `safe_processor` with `yaml.safe_load()`, which is safe. Additionally, the `upload_avatar` function call is incomplete and would fail due to missing parameters, preventing any actual execution. No attacker-controlled input flows into the vulnerable `yaml.load()` call in this specific code.",
+        "detail": "Vulnerability GHSA-8q59-q68h-6hv4 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected (confidence: 95%): The vulnerable function `unsafe_processor` is defined but never called in the main execution flow - it remains commented out. The active code uses `yaml.safe_load()` which is safe by design. While the code contains a reachable vulnerable path in the function definition, there is no evidence of attacker-controlled input being processed through the unsafe YAML loading mechanism in the current implementation.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1537,7 +1661,14 @@
       "description": "An issue was discovered in Django version 2.2 before 2.2.13 and 3.0 before 3.0.7. In cases where a memcached backend does not perform key validation, passing malformed cache keys could result in a key collision, and potential data leakage.",
       "published": "2020-06-05T16:20:44Z",
       "updated": "2024-11-18T16:26:06Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-wpjr-j57x-wxfw analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1571,7 +1702,7 @@
       "updated": "2024-11-18T16:26:11Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-fr28-569j-53c4 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1610,7 +1741,7 @@
       "updated": "2024-12-18T22:08:24Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-8x94-hmjh-97hq analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1650,7 +1781,7 @@
       "updated": "2024-11-18T16:26:35Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-3f63-hfp8-52jq analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-3f63-hfp8-52jq analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1689,7 +1820,14 @@
       "description": "In _imagingcms.c in Pillow before 10.3.0, a buffer overflow exists because strcpy is used instead of strncpy.",
       "published": "2024-04-03T03:30:30Z",
       "updated": "2024-11-18T16:26:40Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-44wm-f244-xhp3 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1721,7 +1859,14 @@
       "description": "An issue was discovered in Django 5.2 before 5.2.2, 5.1 before 5.1.10, and 4.2 before 4.2.22. Internal HTTP response logging does not escape request.path, which allows remote attackers to potentially manipulate log output via crafted URLs. This may lead to log injection or forgery when logs are viewed in terminals or processed by external systems.",
       "published": "2025-06-05T03:30:58Z",
       "updated": "2025-06-10T20:03:55Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-7xr5-9hcq-chf9 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1755,7 +1900,7 @@
       "updated": "2025-11-05T19:55:40Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-qw25-v68c-qjf3 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1794,7 +1939,7 @@
       "updated": "2025-07-09T15:52:20Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-j7hp-h8jx-5ppr analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Heap' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-j7hp-h8jx-5ppr analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Heap' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1834,7 +1979,7 @@
       "updated": "2025-08-15T13:58:05Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-3wvg-mj6g-m9cv analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-3wvg-mj6g-m9cv analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1874,7 +2019,7 @@
       "updated": "2025-08-15T13:58:14Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-f4w8-cv6p-x6r5 analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-f4w8-cv6p-x6r5 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -1914,11 +2059,17 @@
       "updated": "2025-08-15T13:58:19Z",
       "analysis": {
         "state": "exploitable",
-        "detail": "Vulnerability GHSA-95q3-8gr9-gm8w analyzed by Antigravity AI (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable code path in Pillow's Image.open is triggered by user-uploaded files via HTTP POST requests. The `img_file` variable directly receives attacker-controlled content from `request.FILES['avatar']`, and there are no size validations before opening the image. This matches the CVE's attack vector of processing malicious ICO files with oversized declarations, making the application vulnerable to DoS via memory exhaustion. | Evidence: cvedemo/cvedemo/vuln_demo.py:40"
+        "detail": "Vulnerability GHSA-95q3-8gr9-gm8w analyzed by LLM Analyzer (python) on 2026-05-18. Reachable (confidence: 92%): The vulnerable code path in `vuln_demo.py` at line 40 processes user-uploaded files with Pillow's `Image.open()`, which is susceptible to the GHSA-95q3-8gr9-gm8w CVE. Attackers can exploit this by uploading a malicious ICO file with an oversized image size field, triggering excessive memory allocation during parsing. The code lacks any size validation or safe alternatives for handling ICO files. | Evidence: cvedemo/cvedemo/vuln_demo.py:40"
       },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "gitlab:issue-url",
+          "value": "http://localhost/demo-security/app-python/-/issues/3"
         }
       ]
     },
@@ -1947,7 +2098,14 @@
       "description": "### Impact Due to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs. ### Workarounds For older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on your Requests Session ([docs](https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env)). ### References https://github.com/psf/requests/pull/6965 https://seclists.org/fulldisclosure/2025/Jun/2",
       "published": "2025-06-09T19:06:08Z",
       "updated": "2025-06-09T19:06:12Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-9hjg-9r4m-mvj7 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Requests' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -1981,7 +2139,7 @@
       "updated": "2025-11-27T08:50:20Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-frmv-pr5f-9mcr analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2020,7 +2178,7 @@
       "updated": "2025-11-05T20:44:13Z",
       "analysis": {
         "state": "not_affected",
-        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by Antigravity AI (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
+        "detail": "Vulnerability GHSA-6w2r-r2m5-xq5w analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Django' matching CVE patterns found in codebase.",
         "justification": "code_not_reachable",
         "response": [
           "will_not_fix"
@@ -2057,7 +2215,14 @@
       "description": "When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later. This occurs because the underlying connection is reused from the session's connection pool, causing the initial TLS verification setting to persist for the lifetime of the pooled connection. As a result, applications may unintentionally send requests without certificate verification, leading to potential man-in-the-middle attacks and compromised confidentiality or integrity. This behavior affects versions of `requests` prior to 2.32.0.",
       "published": "2024-05-20T20:15:00Z",
       "updated": "2026-01-16T00:02:51Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-9wx4-h78v-vm56 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Requests' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -2089,7 +2254,14 @@
       "description": "### Impact The `requests.utils.extract_zipped_paths()` utility function uses a predictable filename when extracting files from zip archives into the system temporary directory. If the target file already exists, it is reused without validation. A local attacker with write access to the temp directory could pre-create a malicious file that would be loaded in place of the legitimate one. ### Affected usages **Standard usage of the Requests library is not affected by this vulnerability.** Only applications that call `extract_zipped_paths()` directly are impacted. ### Remediation Upgrade to at least Requests 2.33.0, where the library now extracts files to a non-deterministic location. If developers are unable to upgrade, they can set `TMPDIR` in their environment to a directory with restricted write access.",
       "published": "2026-03-25T16:56:28Z",
       "updated": "2026-03-27T22:07:43Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-gc5v-m9x4-r6x2 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Requests' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -2121,7 +2293,14 @@
       "description": "If a font advances for each glyph by an exceeding large amount, when Pillow keeps track of the current position, it may lead to an integer overflow. This has been fixed.",
       "published": "2026-05-04T20:18:45Z",
       "updated": "2026-05-13T13:40:24Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-wjx4-4jcj-g98j analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"
@@ -2153,7 +2332,14 @@
       "description": "### Impact An attacker can supply a malicious PDF that causes the process to hang indefinitely, consuming 100% CPU and making the application unresponsive. ### Patches Patched version: 12.2.0. PdfParser (introduced in Pillow 4.2.0) follows Prev pointers in PDF trailers to read cross-reference sections. If a trailer's Prev pointer references an offset that has already been processed \u2014 either pointing to itself or forming a longer cycle \u2014 the parser enters an infinite loop. Pillow now tracks previously processed trailer offsets and raises an error if a cycle is detected. ### Workarounds Use any version but the affected versions: >= 4.2.0, < 12.2.0 ### Resources - Fix: https://github.com/python-pillow/Pillow/pull/9519",
       "published": "2026-05-04T20:19:30Z",
       "updated": "2026-05-13T13:41:24Z",
-      "analysis": {},
+      "analysis": {
+        "state": "not_affected",
+        "detail": "Vulnerability GHSA-r73j-pqj5-w3x7 analyzed by LLM Analyzer (python) on 2026-05-18. Not Affected: No usage of 'Pillow' matching CVE patterns found in codebase.",
+        "justification": "code_not_reachable",
+        "response": [
+          "will_not_fix"
+        ]
+      },
       "affects": [
         {
           "ref": "1f4a5c12-213f-4413-a06a-72e5486e86a0"

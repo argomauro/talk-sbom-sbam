@@ -2,18 +2,18 @@
 
 Il motore di analisi VEX è uno strumento language-agnostic che determina la
 **reachability** reale delle vulnerabilità (CVE) nel codice sorgente, combinando
-chiamate a **AWS Bedrock (Claude)** con uno scanner locale a regex.
+chiamate a **AWS Bedrock** con uno scanner locale a regex.
 
 Gli script che implementano il motore risiedono nel progetto GitLab condiviso
-`root/vex-engine` e vengono eseguiti automaticamente dalla pipeline CI di ogni
+`demo-security/vex-engine` e vengono eseguiti automaticamente dalla pipeline CI di ogni
 progetto applicativo — senza nessuna azione manuale da parte dello sviluppatore.
 
 ---
 
-## I 3 componenti del progetto `vex-engine`
+## I componenti del progetto `vex-engine`
 
 | File | Ruolo |
-|---|---|
+| --- | --- |
 | `generate_vex.py` | Entry point: carica il VEX, decide quali CVE analizzare, coordina le 3 fasi, crea le Issue GitLab |
 | `llm_analyzer.py` | Motore delle 3 fasi: Strategist, Scanner, Auditor |
 | `ci-template.yml` | Job CI condiviso: incluso via `include:` da tutti i progetti applicativi |
@@ -29,7 +29,7 @@ Il motore opera su una singola CVE alla volta, eseguendo tre fasi in sequenza.
 
 **Input**: descrizione testuale della CVE + nome del pacchetto vulnerabile + linguaggio del progetto.
 
-**Cosa fa**: invia un prompt strutturato a Claude su AWS Bedrock chiedendo di
+**Cosa fa**: invia un prompt strutturato al modello LLM su AWS Bedrock chiedendo di
 estrarre dalla descrizione le informazioni necessarie alla scansione:
 
 ```json
@@ -40,11 +40,10 @@ estrarre dalla descrizione le informazioni necessarie alla scansione:
 }
 ```
 
-**Perché serve un LLM reale**: le CVE descrivono vulnerabilità in linguaggio
+**Perché serve un LLM**: le CVE descrivono vulnerabilità in linguaggio
 naturale, spesso su librerie di nicchia con nomi di funzioni non predicibili.
-Un approccio a keyword hardcoded (`load`, `open`, `parse`...) copre solo i casi
-più comuni. Claude interpreta il significato della descrizione e genera pattern
-specifici per quella CVE — senza richiedere nessuna configurazione manuale.
+Un approccio a keyword hardcoded copre solo i casi più comuni. Il modello interpreta
+il significato della descrizione e genera pattern specifici per quella CVE.
 
 Il risultato viene **cachato in memoria** per evitare chiamate duplicate sulla
 stessa CVE nella stessa run di pipeline.
@@ -62,7 +61,7 @@ con regex e due gate di filtraggio:
    (es. `import yaml` per PyYAML). Evita falsi positivi su funzioni omonime di
    altre librerie.
 2. **Gate pattern**: cerca le `search_patterns` con regex word-boundary
-   (`\b pattern \b`), ignorando righe commentate o vuote.
+   (`\bpattern\b`), ignorando righe commentate o vuote.
 3. Per ogni match estrae una **finestra di ±30 righe** di contesto attorno alla riga trovata.
 
 **Directory ignorate**: `.git`, `venv`, `node_modules`, `__pycache__`, `target`.
@@ -74,7 +73,7 @@ Il motore è installato in `/opt/vex-engine` (separato dal progetto) e non si au
 
 **Input**: CVE description, attack vector (da Fase 1), code snippets (da Fase 2, max 5).
 
-**Cosa fa**: invia i frammenti di codice a Claude chiedendo di determinare se la
+**Cosa fa**: invia i frammenti di codice al modello LLM chiedendo di determinare se la
 vulnerabilità è effettivamente exploitabile analizzando il **data flow**:
 
 - L'input nella funzione vulnerabile viene da una richiesta HTTP / form / upload? → `affected`
@@ -83,6 +82,7 @@ vulnerabilità è effettivamente exploitabile analizzando il **data flow**:
 - Esiste una safe alternative (es. `yaml.safe_load` invece di `yaml.load`)? → `not_affected`
 
 **Output strutturato**:
+
 ```json
 {
   "verdict": "not_affected",
@@ -95,36 +95,107 @@ vulnerabilità è effettivamente exploitabile analizzando il **data flow**:
 
 ---
 
-## Delta Analysis — ottimizzazione dei costi
+## Strategia di analisi — sempre aggiornato
 
-Il motore non ri-analizza le CVE che hanno già un verdetto AI definitivo nel
-`vex.json`. Una CVE viene marcata come "già analizzata" quando il campo
-`analysis.detail` contiene la firma `"analyzed by Antigravity AI"` e lo stato
-è uno tra `not_affected`, `exploitable`, `affected`.
+Il motore **rivaluta tutte le CVE in scope ad ogni push**. Non esiste delta analysis:
+ogni CVE che rientra nel `VEX_MODE` corrente viene analizzata da Bedrock.
 
-In un progetto maturo, la pipeline analizzerà solo le **CVE nuove** introdotte
-dagli aggiornamenti delle librerie — tipicamente 5-15 per push, con un costo
-Bedrock inferiore a $0.01 per pipeline run.
+Questo garantisce che:
+
+1. **Se il developer patcha una vulnerabilità**, la pipeline successiva la rivaluta
+   e aggiorna lo stato da `exploitable` a `not_affected` automaticamente.
+2. **Se il codice introduce un nuovo uso vulnerabile** di una libreria già presente,
+   la pipeline lo rileva immediatamente.
+3. **Il VEX è sempre allineato** allo stato reale del codice sorgente.
+
+**Costo**: con il modello `eu.amazon.nova-2-lite-v1:0`, l'analisi di ~35 CVE
+costa circa $0.01 per pipeline run in mode `critical`.
+
+### Cosa viene preservato
+
+- **Annotazioni manuali**: se uno sviluppatore ha inserito un commento con uno stato
+  custom (diverso da `not_affected`, `exploitable`, `affected`, `in_triage`),
+  il motore lo preserva senza sovrascriverlo.
+- **Issue URL**: il riferimento alla issue GitLab viene mantenuto nelle `properties`
+  del VEX per evitare chiamate API duplicate.
+
+---
+
+## Modalità di analisi (`VEX_MODE`)
+
+| Modalità | CVE analizzate | Costo indicativo | Uso tipico |
+| --- | --- | --- | --- |
+| `critical` (default) | CRITICAL + HIGH + già exploitable/affected | ~$0.01 | Ogni push |
+| `medium` | + MEDIUM | ~$0.03 | Pipeline schedulata |
+| `full` | Tutte le CVE | ~$0.10 | Pipeline schedulata settimanale |
+
+Le CVE fuori scope vengono lasciate in stato `in_triage` fino alla prossima
+esecuzione con un mode più ampio.
 
 ---
 
 ## Apertura Issue GitLab (automatica)
 
-Se il verdetto è `affected`, `generate_vex.py` chiama le API GitLab per aprire
-una Issue di sicurezza nel repository applicativo. La creazione è **idempotente**:
-lo script cerca prima una Issue aperta con la label `cve:CVE-XXXX-XXXX` e la crea
-solo se non ne esiste già una.
+Se il verdetto è `exploitable`, `generate_vex.py` chiama le API GitLab per aprire
+una Issue di sicurezza nel repository applicativo.
+
+La creazione è **idempotente**: lo script cerca prima una Issue aperta con la
+label `cve:GHSA-xxxx` e la crea solo se non ne esiste già una.
+
+Dopo la creazione, l'URL della issue viene salvato nel campo `properties` del VEX:
+
+```json
+{
+  "properties": [
+    { "name": "gitlab:issue-url", "value": "http://localhost/demo-security/app-python/-/issues/1" }
+  ]
+}
+```
+
+Ai run successivi, se la CVE è ancora `exploitable`, il motore verifica la label
+via API — se la issue esiste già, salta la creazione (zero chiamate inutili).
+
+---
+
+## Ciclo di vita di una vulnerabilità
+
+```
+Push → Analisi Bedrock → exploitable → Issue creata
+                                          ↓
+                              Developer patcha il codice
+                                          ↓
+Push successivo → Analisi Bedrock → not_affected → VEX aggiornato
+                                                    (Issue resta aperta per audit)
+```
+
+Il VEX si aggiorna **automaticamente** dopo ogni fix. Non serve intervento manuale
+per cambiare lo stato da `exploitable` a `not_affected`.
 
 ---
 
 ## Perché un progetto condiviso invece di script locali
 
-Il motore è centralizzato in `root/vex-engine` per tre motivi:
+Il motore è centralizzato in `demo-security/vex-engine` per tre motivi:
 
 1. **Single source of truth**: un fix al motore si propaga automaticamente a tutti
    i progetti al loro prossimo push — nessuna sincronizzazione manuale.
 2. **Indipendenza dall'IDE**: gli script non appartengono a nessun IDE
-   (non sono in `.agent/`, `.cursor/` o strutture analoghe) ma sono
-   infrastruttura CI eseguita dal runner.
+   ma sono infrastruttura CI eseguita dal runner.
 3. **Scalabilità**: aggiungere un nuovo progetto richiede solo tre righe di
    `include:` nel suo `.gitlab-ci.yml` — il resto è automatico.
+
+---
+
+## Configurazione
+
+Il motore usa queste variabili CI/CD (configurate a livello di gruppo GitLab):
+
+| Variabile | Scopo |
+| --- | --- |
+| `GITLAB_PAT` | Clone vex-engine + push vex.json + creazione issue (scope: `api`, `read_repository`, `write_repository`) |
+| `DT_API_KEY` | Autenticazione API Dependency-Track |
+| `AWS_ACCESS_KEY_ID` | Credenziale AWS per Bedrock |
+| `AWS_SECRET_ACCESS_KEY` | Credenziale AWS per Bedrock |
+| `AWS_DEFAULT_REGION` | Region AWS (es. `eu-west-1`) |
+| `BEDROCK_MODEL_ID` | Override modello (opzionale, default: `eu.amazon.nova-2-lite-v1:0`) |
+| `VEX_MODE` | Modalità analisi: `critical`, `medium`, `full` |
